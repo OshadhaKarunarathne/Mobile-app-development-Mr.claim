@@ -13,11 +13,6 @@
             android:layout_height="wrap_content"
             layout="@layout/drawer_toolbar"
             />
-<!--        <include-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            layout="@layout/container_main"-->
-<!--            />-->
         <com.google.android.material.navigation.NavigationView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -52,7 +47,7 @@
                 android:layout_height="91dp"
                 android:layout_centerHorizontal="true"
                 android:src="@mipmap/mrclaim"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="3dp"/>
 
             <ViewFlipper
                 android:id="@+id/flipper"
@@ -108,14 +103,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                android:text="My Accidents"/>
+                android:text="My Accidents"
+                app:backgroundTint="@null"/>
 
             <Button
                 style="@style/button_theme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="My Insurance"
-                android:layout_below="@id/btn_accidents" />
+                android:layout_below="@id/btn_accidents"
+                app:backgroundTint="@null"/>
 
         </LinearLayout>
 
