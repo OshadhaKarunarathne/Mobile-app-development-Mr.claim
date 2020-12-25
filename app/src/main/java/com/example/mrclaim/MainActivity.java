@@ -54,5 +54,7 @@ public class MainActivity extends AppCompatActivity {
         viewFlipper.setAutoStart(true);
         viewFlipper.setInAnimation(this, android.R.anim.slide_in_left);
         viewFlipper.setOutAnimation(this, android.R.anim.slide_out_right);
+
+
     }
 }
