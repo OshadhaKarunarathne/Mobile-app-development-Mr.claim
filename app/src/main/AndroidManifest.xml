@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/mrclaim"
         android:supportsRtl="true"
         android:theme="@style/Theme.MrClaim">
+        <activity android:name=".login_activity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
