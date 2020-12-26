@@ -126,6 +126,7 @@ public class register extends AppCompatActivity {
 
                                     // startActivity(new Intent(Register.this,Login.class));finish();
                                 }
+
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
