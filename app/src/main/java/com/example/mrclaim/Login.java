@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -26,17 +27,16 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
         mAuth = FirebaseAuth.getInstance();
-        email=findViewById(R.id.email);
-        pass=findViewById(R.id.pass);
+        email = findViewById(R.id.email);
+        pass = findViewById(R.id.pass);
     }
 
-    private  void Auth(){
-        String email_c=email.getText().toString();
-        String passl_c=pass.getText().toString();
-        mAuth.signInWithEmailAndPassword(email_c,passl_c)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+    public void Auth() {
+        String email_c = email.getText().toString();
+        String passl_c = pass.getText().toString();
+        mAuth.signInWithEmailAndPassword(email_c, passl_c)
+                .addOnCompleteListener(this,(task) -> {
+
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("TAG", "signInWithEmail:success");
@@ -44,7 +44,7 @@ public class Login extends AppCompatActivity {
 
                             startActivity(new Intent(Login.this, MainActivity.class));
 
-                        }else {
+                        } else {
                             // If sign in fails, display a message to the user.
                             Log.w("TAG", "signInWithEmail:failure", task.getException());
                             Toast.makeText(Login.this, "Authentication failed.",
@@ -53,11 +53,23 @@ public class Login extends AppCompatActivity {
                         }
 
                         // ...
-                    }
-                });
-                        }
 
-                        }
+                });
+
+    }
+
+    public void login(View view){
+
+        Auth();
+    }
+
+    public void Regsiter(View view){ startActivity(new Intent(Login.this, register.class));}
+
+
+}
+
+
+
 
 
 
