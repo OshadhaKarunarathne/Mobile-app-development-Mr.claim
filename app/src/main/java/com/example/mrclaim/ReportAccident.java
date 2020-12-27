@@ -3,6 +3,7 @@ package com.example.mrclaim;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 public class ReportAccident extends AppCompatActivity {
 
@@ -11,4 +12,6 @@ public class ReportAccident extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.report_accident);
     }
+
+    public void onRadioButtonSelected(View view){}
 }
