@@ -29,7 +29,4 @@
         android:id="@+id/signout"
         android:title="Sign out"
         android:icon="@drawable/ic_baseline_arrow_back_24"/>
-
-
-
 </menu>
