@@ -3,9 +3,11 @@ package com.example.mrclaim;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
@@ -27,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
         // image flipper
         int images[] = {R.drawable.image1,R.drawable.image2,R.drawable.image3};
         viewFlipper = findViewById(R.id.flipper);
-        for(int image: images){
+        for(int image: images) {
             flipperImages(image);
-
+        }
         //Navigation drawer
             toolbar= findViewById(R.id.drawer_toolbar);
             setSupportActionBar(toolbar);
@@ -38,10 +40,17 @@ public class MainActivity extends AppCompatActivity {
 
             actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout,toolbar,R.string.open, R.string.close);
             drawerLayout.addDrawerListener(actionBarDrawerToggle);
-            actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
+            actionBarDrawerToggle.setDrawerIndicatorEnabled(false);
             actionBarDrawerToggle.syncState();
-        }
+            actionBarDrawerToggle.setToolbarNavigationClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                }
+            });
+            actionBarDrawerToggle.setHomeAsUpIndicator(R.drawable.ic_hamburg);
     }
+
 
     public void flipperImages(int image){
 
