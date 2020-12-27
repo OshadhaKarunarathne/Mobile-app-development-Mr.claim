@@ -3,6 +3,7 @@
     package="com.example.mrclaim">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,8 @@
         android:roundIcon="@mipmap/mrclaim"
         android:supportsRtl="true"
         android:theme="@style/Theme.MrClaim">
-        <activity android:name=".ReportAccident"></activity>
+        <activity android:name=".MyAccident"></activity>
+        <activity android:name=".ReportAccident" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Login">
             <intent-filter>
@@ -20,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".register"></activity>
+        <activity android:name=".register" />
     </application>
 
 </manifest>
