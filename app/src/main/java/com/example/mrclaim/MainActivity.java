@@ -70,6 +70,18 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
+            //emergency vehicle button
+        Button btn_emergency_vehicle = (Button)findViewById(R.id.btn_emergency_vehicle);
+        btn_emergency_vehicle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String number= "1414";
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:"+number));
+                startActivity(intent);
+            }
+        });
+
             //button My Accident
             button= (Button) findViewById(R.id.btn_accidents);
             button.setOnClickListener(new View.OnClickListener() {

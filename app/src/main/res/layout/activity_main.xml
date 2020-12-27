@@ -43,11 +43,11 @@
 
             <ImageView
                 android:id="@+id/homelogo"
-                android:layout_width="144dp"
-                android:layout_height="91dp"
+                android:layout_width="151dp"
+                android:layout_height="121dp"
                 android:layout_centerHorizontal="true"
-                android:src="@mipmap/mrclaim"
-                android:layout_marginTop="3dp"/>
+                android:layout_marginTop="3dp"
+                android:src="@drawable/logo" />
 
             <ViewFlipper
                 android:id="@+id/flipper"
