@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     private ViewFlipper viewFlipper;
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void flipperImages(int image){
+    public void flipperImages(int image) {
 
         // image flipper animation controlling
         imageView = new ImageView(this);
@@ -111,6 +112,24 @@ public class MainActivity extends AppCompatActivity {
         viewFlipper.setInAnimation(this, android.R.anim.slide_in_left);
         viewFlipper.setOutAnimation(this, android.R.anim.slide_out_right);
 
-
     }
+
+    public void navigateLogOut(View view){
+        FirebaseAuth.getInstance().signOut();
+        Intent intent=new Intent(this,Login.class);
+        startActivity(intent);
+    }
+
+
+
+       // public void navigateLogOut(View view){
+       //     FirebaseAuth.getInstance().signOut();
+       //     Intent inent = new Intent(this, MainActivity.class);
+        //    startActivity(inent);
+       // }
+
+
+
+
 }
+
