@@ -24,5 +24,11 @@ public class MyAccident extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+    }
+
+    public void goBack(View view) {
+        Intent intent = new Intent(MyAccident.this,MainActivity.class);
+        startActivity(intent);
     }
 }

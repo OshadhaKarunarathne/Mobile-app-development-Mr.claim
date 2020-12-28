@@ -1,5 +1,6 @@
 package com.example.mrclaim;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,15 +13,17 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ViewFlipper viewFlipper;
     private ImageView imageView;
     DrawerLayout drawerLayout;
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     NavigationView navigationView;
     public Button button;
+    public View v;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +47,12 @@ public class MainActivity extends AppCompatActivity {
         //Toolbar
             toolbar= findViewById(R.id.drawer_toolbar);
             setSupportActionBar(toolbar);
-
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
             //Navigation drawer
             drawerLayout= findViewById(R.id.drawer);
             navigationView= findViewById(R.id.navigation_view);
+            navigationView.setNavigationItemSelectedListener(this::onNavigationItemSelected);
+
             actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout,toolbar,R.string.open, R.string.close);
             drawerLayout.addDrawerListener(actionBarDrawerToggle);
             actionBarDrawerToggle.setDrawerIndicatorEnabled(false);
@@ -57,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     drawerLayout.openDrawer(GravityCompat.START);
                 }
             });
-            actionBarDrawerToggle.setHomeAsUpIndicator(R.drawable.ic_hamburg);
+            actionBarDrawerToggle.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
 
             //119 button_
             Button btn_emergency = (Button)findViewById(R.id.btn_emergency);
@@ -86,19 +92,49 @@ public class MainActivity extends AppCompatActivity {
             //button My Accident
             button= (Button) findViewById(R.id.btn_accidents);
             button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(MainActivity.this,MyAccident.class);
+               @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this,MyAccident.class);
                     startActivity(intent);
                 }
             });
-    }
-    public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.action_bar_menu,menu);
-        return true;
+        navigationDrawer();
+
     }
 
+    private void navigationDrawer() {
+        navigationView.bringToFront();
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+
+                    case R.id.home:
+
+                        //startActivity(new Intent(MainActivity.this,MyAccident.class));
+                        Toast.makeText(MainActivity.this, "Returned to home", Toast.LENGTH_SHORT).show();
+                        navigationView.setCheckedItem(R.id.home);
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.log_out:
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent=new Intent(MainActivity.this,Login.class);
+                        startActivity(intent);
+                        break;
+                }
+                return false;
+
+            }
+
+        });
+    }
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerVisible(GravityCompat.START))
+            drawerLayout.closeDrawer(GravityCompat.START);
+        else
+            super.onBackPressed();
+    }
 
     public void flipperImages(int image) {
 
@@ -113,23 +149,20 @@ public class MainActivity extends AppCompatActivity {
         viewFlipper.setOutAnimation(this, android.R.anim.slide_out_right);
 
     }
-
-    public void navigateLogOut(View view){
-        FirebaseAuth.getInstance().signOut();
-        Intent intent=new Intent(this,Login.class);
-        startActivity(intent);
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.log_out){
+            Intent intent = new Intent(MainActivity.this,MyAccident.class);
+            startActivity(intent);
+        }
+        return true;
     }
 
-
-
-       // public void navigateLogOut(View view){
-       //     FirebaseAuth.getInstance().signOut();
-       //     Intent inent = new Intent(this, MainActivity.class);
-        //    startActivity(inent);
-       // }
-
-
-
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.action_bar_menu,menu);
+        return true;
+    }
 }
 
