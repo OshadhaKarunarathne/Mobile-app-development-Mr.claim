@@ -1,20 +1,30 @@
 package com.example.mrclaim;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ReportAccident extends AppCompatActivity {
+
+    @TargetApi(Build.VERSION_CODES.O)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.report_accident);
-    }
 
+        EditText editText=findViewById(R.id.date);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy 'at' HH:mm:ss ");
+        String currentDateandTime = sdf.format(new Date());
+        editText.setText(currentDateandTime);
+    }
 
     public void onRadioButtonSelected(View view){
 
@@ -47,3 +57,4 @@ public class ReportAccident extends AppCompatActivity {
 
 
 }
+
