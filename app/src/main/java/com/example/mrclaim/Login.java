@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,6 +23,7 @@ public class Login extends AppCompatActivity {
     EditText email;
     EditText pass;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,7 @@ public class Login extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         email = findViewById(R.id.email);
         pass = findViewById(R.id.pass);
+
     }
 
     public void Auth() {
@@ -64,6 +67,11 @@ public class Login extends AppCompatActivity {
     }
 
     public void Regsiter(View view){ startActivity(new Intent(Login.this, register.class));}
+
+    public void NavigateForgetMyPassword(View v) {
+        Intent inent = new Intent(this, ResetPasswordActivity.class);
+        startActivity(inent);
+    }
 
 
 }
