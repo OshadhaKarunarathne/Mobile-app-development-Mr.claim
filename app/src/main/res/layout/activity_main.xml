@@ -68,8 +68,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/layout_flipper"
             android:layout_centerVertical="true"
-            android:text="Emergency \nUnit\n119"
-            app:backgroundTint="@null" />
+            android:text="119"
+            android:textSize="60sp"
+            app:backgroundTint="@null"
+            android:drawableLeft="@drawable/phone"
+            android:layout_alignBottom="@id/btn_emergency_vehicle"/>
 
 
 
@@ -79,12 +82,13 @@
             android:layout_height="wrap_content"
             style="@style/button_theme"
             android:layout_marginLeft="15dp"
-            android:text="Request \nEmergency \n vehicle"
+            android:text="Emergency \n vehicle"
             android:layout_toRightOf="@id/btn_emergency"
             android:layout_centerVertical="true"
             android:layout_alignRight="@id/layout_flipper"
             android:layout_below="@id/layout_flipper"
             app:backgroundTint="@null"
+            android:drawableTop="@drawable/phone"
             />
 
         <LinearLayout
@@ -97,7 +101,8 @@
             android:orientation="vertical"
             android:layout_alignLeft="@id/btn_emergency"
             android:layout_alignRight="@id/btn_emergency_vehicle"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:layout_alignParentBottom="true">
 
             <Button
                 android:id="@+id/btn_accidents"
@@ -106,7 +111,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:text="My Accidents"
-                app:backgroundTint="@null"/>
+                app:backgroundTint="@null"
+                android:drawableLeft="@drawable/accident"
+                android:layout_gravity="center"/>
 
             <Button
                 style="@style/button_theme"
@@ -114,7 +121,9 @@
                 android:layout_height="wrap_content"
                 android:text="My Insurance"
                 android:layout_below="@id/btn_accidents"
-                app:backgroundTint="@null"/>
+                app:backgroundTint="@null"
+                android:drawableLeft="@drawable/insurance"
+                android:layout_gravity="center"/>
 
         </LinearLayout>
     </RelativeLayout>
