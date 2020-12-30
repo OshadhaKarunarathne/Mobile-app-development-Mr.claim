@@ -50,14 +50,13 @@
                 android:layout_marginTop="3dp"
                 android:src="@drawable/logo" />
 
-            <ViewFlipper
-                android:id="@+id/flipper"
-                android:layout_width="wrap_content"
-                android:layout_height="250dp"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/homelogo"
-                android:layout_marginBottom="10dp"/>
-
+                <ViewFlipper
+                    android:id="@+id/flipper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="250dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/homelogo"
+                    android:layout_marginBottom="10dp" />
 
         </RelativeLayout>
 
@@ -72,7 +71,8 @@
             android:textSize="60sp"
             app:backgroundTint="@null"
             android:drawableLeft="@drawable/phone"
-            android:layout_alignBottom="@id/btn_emergency_vehicle"/>
+            android:layout_alignBottom="@id/btn_emergency_vehicle"
+            android:paddingRight="15dp"/>
 
 
 
@@ -101,7 +101,7 @@
             android:orientation="vertical"
             android:layout_alignLeft="@id/btn_emergency"
             android:layout_alignRight="@id/btn_emergency_vehicle"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_alignParentBottom="true">
 
             <Button
