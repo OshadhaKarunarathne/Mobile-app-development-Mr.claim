@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -37,7 +38,19 @@ public class Login extends AppCompatActivity {
     public void Auth() {
         String email_c = email.getText().toString();
         String passl_c = pass.getText().toString();
+
+        if (TextUtils.isEmpty(email_c)) {
+            email.setError("Email is Required!");
+            return;
+        }
+        if (TextUtils.isEmpty(passl_c)) {
+            pass.setError("Password is Required!");
+            return;
+        }
+
+
         mAuth.signInWithEmailAndPassword(email_c, passl_c)
+
                 .addOnCompleteListener(this,(task) -> {
 
                         if (task.isSuccessful()) {
