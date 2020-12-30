@@ -55,7 +55,7 @@ public class Login extends AppCompatActivity {
 
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Log.d("TAG", "signInWithEmail:success");
+                            Log.d("TAG", "signInWithEmail:success.");
                             FirebaseUser user = mAuth.getCurrentUser();
 
                             startActivity(new Intent(Login.this, MainActivity.class));
@@ -63,7 +63,7 @@ public class Login extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("TAG", "signInWithEmail:failure", task.getException());
-                            Toast.makeText(Login.this, "Authentication failed.",
+                            Toast.makeText(Login.this, "Authentication failed.please re enter correct email and password.",
                                     Toast.LENGTH_SHORT).show();
                             // updateUI(null);
                         }
