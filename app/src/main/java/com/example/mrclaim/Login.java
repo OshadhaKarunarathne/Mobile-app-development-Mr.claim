@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ public class Login extends AppCompatActivity {
     EditText pass;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,7 @@ public class Login extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         email = findViewById(R.id.email);
         pass = findViewById(R.id.pass);
+
 
     }
 
@@ -47,6 +50,8 @@ public class Login extends AppCompatActivity {
             pass.setError("Password is Required!");
             return;
         }
+
+
 
 
         mAuth.signInWithEmailAndPassword(email_c, passl_c)
@@ -77,6 +82,8 @@ public class Login extends AppCompatActivity {
     public void login(View view){
 
         Auth();
+
+
     }
 
     public void Regsiter(View view){ startActivity(new Intent(Login.this, register.class));}
