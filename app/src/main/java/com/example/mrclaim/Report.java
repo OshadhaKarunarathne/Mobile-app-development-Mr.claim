@@ -1,11 +1,15 @@
 package com.example.mrclaim;
 
 public class Report {
+
+
     private String VehicleNo;
     private String DateTime;
     private String State;
     private String City;
     private String Address;
+
+
 
     public Report() {
 
