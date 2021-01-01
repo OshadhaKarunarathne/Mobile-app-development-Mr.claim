@@ -15,6 +15,8 @@ public class MyAccident extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_accident);
         Button call_agent = (Button)findViewById(R.id.call_agent);
+
+
         call_agent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,10 +27,23 @@ public class MyAccident extends AppCompatActivity {
             }
         });
 
+
+
     }
 
     public void goBack(View view) {
-        Intent intent = new Intent(MyAccident.this,MainActivity.class);
+        Intent intent = new Intent(MyAccident.this, MainActivity.class);
         startActivity(intent);
     }
+
+    public void report(View view){
+        Intent intent = new Intent (MyAccident.this,ReportAccident.class);
+        startActivity(intent);
+    }
+
+
+
+
+
+
 }
