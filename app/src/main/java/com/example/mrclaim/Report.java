@@ -1,5 +1,6 @@
 package com.example.mrclaim;
 
+// report.java = ReportAccivity firebase connection.
 public class Report {
 
 
