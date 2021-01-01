@@ -11,6 +11,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.List;
 import java.util.Locale;
 import java.text.SimpleDateFormat;
@@ -28,6 +34,9 @@ import java.util.Date;
 
 public class ReportAccident extends AppCompatActivity implements LocationListener {
 
+    Button mSendData;
+    EditText VehicleNo;
+    EditText DateandTime;
     EditText edit_City;
     EditText edit_State;
     EditText edit_FullAddress;
@@ -37,12 +46,55 @@ public class ReportAccident extends AppCompatActivity implements LocationListene
     private double longitude;
 
 
+    DatabaseReference reference;
+    Report report;
+
+
+
+
+
     @TargetApi(Build.VERSION_CODES.O)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.report_accident);
+
+         VehicleNo = findViewById(R.id.Vehicle_No);
+         DateandTime=findViewById(R.id.date);
+         edit_City= findViewById(R.id.editCity);
+         edit_State= findViewById(R.id.editState);
+         edit_FullAddress= findViewById(R.id.editFullAddress);
+         mSendData=findViewById(R.id.SendData);
+         reference=FirebaseDatabase.getInstance().getReference().child("Report");
+
+            report=new Report();
+
+            mSendData.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                  report.setVehicleNo(VehicleNo.getText().toString().trim());
+                  report.setDateTime(DateandTime.getText().toString().trim());
+                  report.setState(edit_State.getText().toString().trim());
+                  report.setState(edit_City.getText().toString().trim());
+                  report.setState(edit_FullAddress.getText().toString().trim());
+
+                  reference.child("Report 1").setValue(report);
+                    Toast.makeText(ReportAccident.this, "Data Inserted Successfully!", Toast.LENGTH_SHORT).show();
+
+
+
+                    if (TextUtils.isEmpty((CharSequence) VehicleNo)) {
+                        VehicleNo.setError("This can not be Empty!");
+                        return;
+                    }
+                }
+            });
+
+
+
+
+        //Current Time and Date
 
         EditText editText = findViewById(R.id.date);
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy 'at' HH:mm:ss ");

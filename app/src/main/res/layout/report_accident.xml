@@ -46,7 +46,7 @@
             android:textSize="17sp"/>
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/Vehicle_No"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
@@ -168,7 +168,7 @@
         </RadioGroup>
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/SendData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Next"
