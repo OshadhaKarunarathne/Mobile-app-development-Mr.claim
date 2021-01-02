@@ -22,8 +22,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
@@ -44,11 +47,10 @@ public class ReportAccident extends AppCompatActivity implements LocationListene
     LocationManager locationManager;
     private double latitude;
     private double longitude;
-
+    long maxid=0;
 
     DatabaseReference reference;
     Report report;
-
 
 
 
@@ -60,13 +62,29 @@ public class ReportAccident extends AppCompatActivity implements LocationListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.report_accident);
 
-         VehicleNo = findViewById(R.id.Vehicle_No);
-         DateandTime=findViewById(R.id.date);
-         edit_City= findViewById(R.id.editCity);
-         edit_State= findViewById(R.id.editState);
-         edit_FullAddress= findViewById(R.id.editFullAddress);
-         mSendData=findViewById(R.id.SendData);
+         VehicleNo =(EditText) findViewById(R.id.Vehicle_No);
+         DateandTime=(EditText) findViewById(R.id.date);
+         edit_City= (EditText) findViewById(R.id.editCity);
+         edit_State= (EditText) findViewById(R.id.editState);
+         edit_FullAddress= (EditText) findViewById(R.id.editFullAddress);
+         mSendData=(Button) findViewById(R.id.SendData);
          reference=FirebaseDatabase.getInstance().getReference().child("Report");
+
+         reference.addValueEventListener(new ValueEventListener() {
+             @Override
+             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                 if (snapshot.exists())
+                     maxid=(snapshot.getChildrenCount());
+             }
+
+             @Override
+             public void onCancelled(@NonNull DatabaseError error) {
+
+             }
+         });
+
+
 
             report=new Report();
 
@@ -75,11 +93,11 @@ public class ReportAccident extends AppCompatActivity implements LocationListene
                 public void onClick(View v) {
                   report.setVehicleNo(VehicleNo.getText().toString().trim());
                   report.setDateTime(DateandTime.getText().toString().trim());
-                  report.setState(edit_State.getText().toString().trim());
-                  report.setState(edit_City.getText().toString().trim());
-                  report.setState(edit_FullAddress.getText().toString().trim());
+                  report.setCity(edit_City.getText().toString().trim());
+                  report.setAddress(edit_FullAddress.getText().toString().trim());
 
-                  reference.child("Report 1").setValue(report);
+
+                  reference.child(String.valueOf(maxid+1)).setValue(report);
                     Toast.makeText(ReportAccident.this, "Data Inserted Successfully!", Toast.LENGTH_SHORT).show();
 
 
