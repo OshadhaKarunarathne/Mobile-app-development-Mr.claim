@@ -164,5 +164,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         inflater.inflate(R.menu.action_bar_menu,menu);
         return true;
     }
+
+    public void btn_accidents(View view){
+        startActivity(new Intent(MainActivity.this, MyAccident.class));
+
+    }
 }
 

@@ -57,15 +57,18 @@
             android:layout_marginRight="12dp"/>
 
         <Button
+            android:id="@+id/mycases"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:backgroundTint="@null"
+
             style="@style/button_theme"
             android:text="My Cases"
             android:textSize="40sp"
             android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"/>
+            android:layout_marginRight="12dp"
+            android:onClick="mycases"/>
 
 
     </LinearLayout>

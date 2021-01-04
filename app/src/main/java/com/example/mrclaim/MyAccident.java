@@ -41,6 +41,10 @@ public class MyAccident extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void mycases(View view){
+        Intent intent = new Intent(MyAccident.this,Accident_history.class);
+        startActivity(intent);
+    }
 
 
 
