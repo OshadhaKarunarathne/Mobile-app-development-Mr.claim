@@ -36,7 +36,7 @@ import java.util.Locale;
 
 public class garage_details extends AppCompatActivity {
 
-      /*      EditText Vnumber;
+   /*         EditText Vnumber;
             EditText gname;
             EditText time;
             EditText city;
@@ -54,12 +54,12 @@ public class garage_details extends AppCompatActivity {
     Report report;
 
 
-
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.report_accident);
-
+/*
         Vnumber = findViewById(R.id.vehicle_no);
         gname = findViewById(R.id.gname);
         time = findViewById(R.id.timeanddate);
@@ -208,6 +208,6 @@ public class garage_details extends AppCompatActivity {
             {
                 Toast.makeText(this, "Permission Denied.", Toast.LENGTH_SHORT).show();
             }
-        }
-    }                                    */
+        }       */
+    }
 }
