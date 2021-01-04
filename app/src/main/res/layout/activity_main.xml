@@ -113,6 +113,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:text="My Accidents"
+                android:onClick="btn_accidents"
                 app:backgroundTint="@null"
                 android:drawableLeft="@drawable/accident"
                 android:layout_gravity="center"/>
