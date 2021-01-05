@@ -39,14 +39,14 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class garage_details extends AppCompatActivity implements LocationListener{
+public class garage_details extends AppCompatActivity implements LocationListener  {
 
     Button btnLocation;
     EditText Vehicle_No;
     EditText gname;
     EditText timedate;
     EditText FullAddress;
-    Button showLocation;
+
     LocationManager locationManager;
     private double latitude;
     private double longitude;
@@ -57,21 +57,15 @@ public class garage_details extends AppCompatActivity implements LocationListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_garage_details);
 
-        btnLocation=findViewById(R.id.btnLocation);
-        Vehicle_No=(EditText)findViewById(R.id.Vehicle_No);
-        gname= findViewById(R.id.gname);
-        timedate=findViewById(R.id.timedate);
-        FullAddress=findViewById(R.id.FullAddress);
-        showLocation=findViewById(R.id.showLocation);
-
-
+        //Current Time and Date
 
         EditText editText = findViewById(R.id.timedate);
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy 'at' HH:mm:ss ");
         String currentDateandTime = sdf.format(new Date());
         editText.setText(currentDateandTime);
 
-        intView();
+
+        initView();
 
         btnLocation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,18 +73,19 @@ public class garage_details extends AppCompatActivity implements LocationListene
                 if (ContextCompat.checkSelfPermission(garage_details.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                     ActivityCompat.requestPermissions(garage_details.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
 
+
                 } else {
                     detectCurrentLocation();
                 }
             }
+        });
 
-        } );
-}
+
+    }
 
     private void detectCurrentLocation() {
-        Toast.makeText(this, "Getting your Current Location", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Please getting your current Location", Toast.LENGTH_SHORT).show();
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -100,23 +95,23 @@ public class garage_details extends AppCompatActivity implements LocationListene
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
             return;
-
         }
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
-
     }
 
+    private void initView() {
 
-    private void intView() {
+        Vehicle_No = (EditText) findViewById(R.id.Vehicle_No);
+        gname = findViewById(R.id.gname);
+        timedate = findViewById(R.id.timedate);
         FullAddress = findViewById(R.id.FullAddress);
         btnLocation = findViewById(R.id.btnLocation);
     }
 
-
     @Override
     public void onLocationChanged(@NonNull Location location) {
-        latitude = location.getLatitude();
-        longitude = location.getLongitude();
+        latitude=location.getLatitude();
+        longitude=location.getLongitude();
         findAddress();
 
     }
@@ -125,40 +120,38 @@ public class garage_details extends AppCompatActivity implements LocationListene
         Geocoder geocoder;
         List<Address> addresses;
         geocoder = new Geocoder(this, Locale.getDefault());
-
         try {
+
             addresses = geocoder.getFromLocation(latitude, longitude, 1);
-
-                    String fullAddress = addresses.get(0).getAddressLine(0);
-
-
+            String fullAddress = addresses.get(0).getAddressLine(0);
 
             FullAddress.setText(fullAddress);
         } catch (Exception e) {
-            Toast.makeText(this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
         }
     }
 
+            @Override
+            public void onStatusChanged (String provider,int status, Bundle extras){
 
+            }
+
+            @Override
+            public void onProviderEnabled (@NonNull String provider){
+
+            }
+
+
+
+        @Override
+        public void onProviderDisabled (@NonNull String provider){
+            Toast.makeText(this, "Turn on gps", Toast.LENGTH_SHORT).show();
+
+        }
 
     @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {
-
-    }
-
-    @Override
-    public void onProviderEnabled(@NonNull String provider) {
-
-    }
-
-    @Override
-    public void onProviderDisabled(@NonNull String provider) {
-        Toast.makeText(this, "Please Turn On Location.", Toast.LENGTH_SHORT).show();
-
-    }
-
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if (requestCode==1){
+        if(requestCode==1){
             if (grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED)
             {
                 detectCurrentLocation();
@@ -168,5 +161,6 @@ public class garage_details extends AppCompatActivity implements LocationListene
                 Toast.makeText(this, "Permission Denied.", Toast.LENGTH_SHORT).show();
             }
         }
+
     }
 }
