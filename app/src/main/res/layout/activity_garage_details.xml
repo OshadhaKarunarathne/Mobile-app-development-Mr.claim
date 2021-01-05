@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.114"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077"
+        app:layout_constraintVertical_bias="0.066"
         app:srcCompat="@drawable/logo" />
 
     <TextView
@@ -37,7 +37,7 @@
 
 
     <Button
-        android:id="@+id/btnLocation"
+        android:id="@+id/showLocation"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
 
@@ -46,36 +46,38 @@
         android:text="Get Location"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.685" />
+        app:layout_constraintVertical_bias="0.837" />
 
     <Button
         android:id="@+id/button_back"
         android:layout_width="147dp"
         android:layout_height="39dp"
         android:layout_gravity="center"
+        android:onClick="backtomycase"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.143"
+        app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.914" />
+        app:layout_constraintVertical_bias="0.971" />
 
     <Button
         android:id="@+id/SendData"
         android:layout_width="147dp"
         android:layout_height="39dp"
         android:layout_gravity="center"
+        android:onClick="garagedetailssend"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.914" />
+        app:layout_constraintVertical_bias="0.971" />
 
     <TextView
         android:id="@+id/textView15"
@@ -85,12 +87,17 @@
         android:gravity="center_horizontal"
         android:text="Please enter the garage  details,after engtering the vehical to garage! "
         android:textAlignment="center"
-        android:textSize="30sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="514dp" />
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.893"
+        tools:ignore="MissingConstraints" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="386dp"
         android:layout_height="333dp"
         android:orientation="vertical"
@@ -99,7 +106,7 @@
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354">
+        app:layout_constraintVertical_bias="0.592">
 
         <TextView
             android:id="@+id/textView16"
@@ -123,12 +130,12 @@
             android:id="@+id/gname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Garage name"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:text="Garage name" />
 
         <EditText
-            android:id="@+id/timeanddate"
+            android:id="@+id/timedate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -136,25 +143,9 @@
             android:drawableRight="@drawable/ic_time"
             android:hint="Current Time and Date  " />
 
-        <EditText
-            android:id="@+id/state"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5sp"
-            android:layout_weight="1"
-            android:drawableEnd="@drawable/ic_location"
-            android:drawableRight="@drawable/ic_location"
-            android:hint="State" />
 
-        <EditText
-            android:id="@+id/city"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5sp"
-            android:layout_weight="1"
-            android:drawableEnd="@drawable/ic_location"
-            android:drawableRight="@drawable/ic_location"
-            android:hint="city" />
+
+
 
         <EditText
             android:id="@+id/FullAddress"
@@ -165,6 +156,16 @@
             android:drawableRight="@drawable/ic_location"
             android:hint="Location Address" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/casedetails"
+        android:layout_width="411dp"
+        android:layout_height="81dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.215" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
