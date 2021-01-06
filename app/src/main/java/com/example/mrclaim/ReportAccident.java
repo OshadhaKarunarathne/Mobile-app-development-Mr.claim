@@ -35,7 +35,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class ReportAccident extends AppCompatActivity implements LocationListener {
+public class ReportAccident extends AppCompatActivity implements LocationListener  {
 
     Button mSendData;
     EditText VehicleNo;

@@ -18,6 +18,7 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -46,10 +47,16 @@ public class garage_details extends AppCompatActivity implements LocationListene
     EditText gname;
     EditText timedate;
     EditText FullAddress;
+    DatabaseReference reference;
+    FirebaseDatabase rootNode;
+
+
+    Button send;
 
     LocationManager locationManager;
     private double latitude;
     private double longitude;
+    long maxId=0;
 
 
     @Override
@@ -57,13 +64,47 @@ public class garage_details extends AppCompatActivity implements LocationListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_garage_details);
 
+        Vehicle_No =  findViewById(R.id.Vehicle_No);
+        gname = findViewById(R.id.gname);
+        timedate = findViewById(R.id.timedate);
+        FullAddress = findViewById(R.id.FullAddress);
+        send = findViewById(R.id.Send);
+
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rootNode = FirebaseDatabase.getInstance();
+                reference = rootNode.getReference("Garage");
+
+                reference.setValue("kapiya");
+
+                String VehicleNo = Vehicle_No.getText().toString();
+
+
+
+
+
+//                String Garage_Name = gname.getText().toString();
+//                String Time_and_Date = timedate.getText().toString();
+//                String Full_Address = FullAddress.getText().toString();
+//
+//                Garage garage = new Garage(VehicleNo,Garage_Name,Time_and_Date,Full_Address);
+//
+//                reference.child(VehicleNo).setValue(garage);
+
+
+            }
+        });
+
+
+
+
         //Current Time and Date
 
         EditText editText = findViewById(R.id.timedate);
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy 'at' HH:mm:ss ");
         String currentDateandTime = sdf.format(new Date());
         editText.setText(currentDateandTime);
-
 
         initView();
 
@@ -106,6 +147,7 @@ public class garage_details extends AppCompatActivity implements LocationListene
         timedate = findViewById(R.id.timedate);
         FullAddress = findViewById(R.id.FullAddress);
         btnLocation = findViewById(R.id.btnLocation);
+        send = findViewById(R.id.SendData);
     }
 
     @Override
@@ -140,8 +182,6 @@ public class garage_details extends AppCompatActivity implements LocationListene
             public void onProviderEnabled (@NonNull String provider){
 
             }
-
-
 
         @Override
         public void onProviderDisabled (@NonNull String provider){
