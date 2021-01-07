@@ -11,6 +11,11 @@
     <color name="button_pressed_red">#CF7275</color>
     <color name="grey">#6c7471</color>
 
+
+    <!-- Dil -->
+    <color name="pink">#FFCCCA</color>
+
+
     <!-- osda -->
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
