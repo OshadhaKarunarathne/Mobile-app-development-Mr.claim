@@ -26,8 +26,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mrclaim.Model.Gargae_Model;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -43,13 +48,15 @@ import java.util.Locale;
 public class garage_details extends AppCompatActivity implements LocationListener  {
 
     Button btnLocation;
-    EditText Vehicle_No;
+    EditText vehicle_no;
     EditText gname;
     EditText timedate;
     EditText FullAddress;
     DatabaseReference reference;
     FirebaseDatabase rootNode;
 
+
+    TextView casedetails;
 
     Button send;
 
@@ -59,15 +66,50 @@ public class garage_details extends AppCompatActivity implements LocationListene
     long maxId=0;
 
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_garage_details);
+        initView();
 
-        Vehicle_No =  findViewById(R.id.Vehicle_No);
-        gname = findViewById(R.id.gname);
-        timedate = findViewById(R.id.timedate);
-        FullAddress = findViewById(R.id.FullAddress);
+
+
+
+        //retrieve value from the intent and set it to text view
+
+        Bundle extras = getIntent().getExtras();
+        String data=null;
+
+        if (extras != null) {
+            data = extras.getString("data");
+            // and get whatever type user account id is
+        }
+        casedetails.setText(data);
+
+
+
+
+        //define the database variable
+        reference=FirebaseDatabase.getInstance().getReference().child("GarageDetails");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (snapshot.exists())
+                    maxId=(snapshot.getChildrenCount());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
         send = findViewById(R.id.Send);
 
         send.setOnClickListener(new View.OnClickListener() {
@@ -76,22 +118,32 @@ public class garage_details extends AppCompatActivity implements LocationListene
                 rootNode = FirebaseDatabase.getInstance();
                 reference = rootNode.getReference("Garage");
 
-                reference.setValue("kapiya");
-
-                String VehicleNo = Vehicle_No.getText().toString();
+              Toast.makeText(garage_details.this,vehicle_no.getText().toString(),Toast.LENGTH_SHORT);
 
 
+                Gargae_Model gargae_model= new Gargae_Model(
+                        FirebaseAuth.getInstance().getUid(),
+                        vehicle_no.getText().toString(),
+                        gname.getText().toString(),
+                        timedate.getText().toString(),
+                        FullAddress.getText().toString()
 
+                );
 
+                reference.child(String.valueOf(maxId+1)).setValue(gargae_model)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(garage_details.this, "Data Inserted Successfully!", Toast.LENGTH_SHORT).show();
 
-//                String Garage_Name = gname.getText().toString();
-//                String Time_and_Date = timedate.getText().toString();
-//                String Full_Address = FullAddress.getText().toString();
-//
-//                Garage garage = new Garage(VehicleNo,Garage_Name,Time_and_Date,Full_Address);
-//
-//                reference.child(VehicleNo).setValue(garage);
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(garage_details.this, "Data Inserted Failed!", Toast.LENGTH_SHORT).show();
 
+                    }
+                });
 
             }
         });
@@ -106,7 +158,7 @@ public class garage_details extends AppCompatActivity implements LocationListene
         String currentDateandTime = sdf.format(new Date());
         editText.setText(currentDateandTime);
 
-        initView();
+
 
         btnLocation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,11 +193,11 @@ public class garage_details extends AppCompatActivity implements LocationListene
     }
 
     private void initView() {
-
-        Vehicle_No = (EditText) findViewById(R.id.Vehicle_No);
+        vehicle_no =  findViewById(R.id.vehicle_no);
         gname = findViewById(R.id.gname);
         timedate = findViewById(R.id.timedate);
         FullAddress = findViewById(R.id.FullAddress);
+        casedetails = findViewById(R.id.casedetails);
         btnLocation = findViewById(R.id.btnLocation);
         send = findViewById(R.id.SendData);
     }
