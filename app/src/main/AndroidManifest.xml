@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/mrclaim"
         android:supportsRtl="true"
         android:theme="@style/Theme.MrClaim">
-
         <activity android:name=".imgupload" />
+
+
+
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".MyAccident" />
         <activity android:name=".ReportAccident" />
