@@ -1,16 +1,23 @@
-package com.example.mrclaim;
+package com.example.mrclaim.Model;
 
 // report.java = ReportAccivity firebase connection.
 public class Report {
 
 
+    private String CurrentUID;
     private String VehicleNo;
     private String DateTime;
     private String State;
     private String City;
     private String Address;
 
+    public String getCurrentUID() {
+        return CurrentUID;
+    }
 
+    public void setCurrentUID(String currentUID) {
+        CurrentUID = currentUID;
+    }
 
     public Report() {
 
