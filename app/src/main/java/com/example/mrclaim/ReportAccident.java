@@ -22,12 +22,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.mrclaim.Model.Report;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 import java.util.Locale;
@@ -91,21 +94,39 @@ public class ReportAccident extends AppCompatActivity implements LocationListene
             mSendData.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                  report.setCurrentUID(FirebaseAuth.getInstance().getUid());
                   report.setVehicleNo(VehicleNo.getText().toString().trim());
                   report.setDateTime(DateandTime.getText().toString().trim());
                   report.setCity(edit_City.getText().toString().trim());
                   report.setAddress(edit_FullAddress.getText().toString().trim());
 
 
-                  reference.child(String.valueOf(maxid+1)).setValue(report);
-                    Toast.makeText(ReportAccident.this, "Data Inserted Successfully!", Toast.LENGTH_SHORT).show();
+                  reference.child(String.valueOf(maxid+1)).setValue(report).addOnSuccessListener(new OnSuccessListener<Void>() {
+                      @Override
+                      public void onSuccess(Void aVoid) {
+
+                          Toast.makeText(ReportAccident.this, "Data Inserted Successfully!", Toast.LENGTH_SHORT).show();
+                      }
+                  }).addOnFailureListener(new OnFailureListener() {
+                      @Override
+                      public void onFailure(@NonNull Exception e) {
+
+                          Toast.makeText(ReportAccident.this, "Data Inserted Failed!", Toast.LENGTH_SHORT).show();
+                      }
+                  })
 
 
 
-                    if (TextUtils.isEmpty((CharSequence) VehicleNo)) {
-                        VehicleNo.setError("This can not be Empty!");
-                        return;
-                    }
+                  ;
+
+
+
+
+//                    if (TextUtils.isEmpty((CharSequence) VehicleNo)) {
+//                        VehicleNo.setError("This can not be Empty!");
+//                        return;
+//                    }
                 }
             });
 
