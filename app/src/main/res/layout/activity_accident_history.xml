@@ -40,12 +40,12 @@
 
     <ListView
         android:id="@+id/myListView"
-        android:layout_marginTop="150dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:dividerHeight="1dp"
+        android:layout_width="410dp"
+        android:layout_height="579dp"
         android:background="@color/pink"
-        android:padding="20dp"/>
+        android:dividerHeight="1dp"
+        android:padding="20dp"
+        tools:layout_editor_absoluteY="152dp" />
 
 
 

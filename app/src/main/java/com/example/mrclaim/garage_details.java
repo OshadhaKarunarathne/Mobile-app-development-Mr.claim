@@ -66,9 +66,6 @@ public class garage_details extends AppCompatActivity implements LocationListene
     long maxId=0;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

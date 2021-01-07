@@ -12,8 +12,10 @@
         <activity android:name=".imgupload" />
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".MyAccident" />
+        <activity android:name=".Accident_history"/>
         <activity android:name=".ReportAccident" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".garage_details"/>
         <activity android:name=".Login" >
 
             <intent-filter>
