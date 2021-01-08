@@ -55,6 +55,7 @@ public class garage_details extends AppCompatActivity implements LocationListene
     DatabaseReference reference;
     FirebaseDatabase rootNode;
 
+    Button button_back;
 
     TextView casedetails;
 
@@ -70,6 +71,8 @@ public class garage_details extends AppCompatActivity implements LocationListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_garage_details);
+
+
         initView();
 
 
@@ -106,14 +109,14 @@ public class garage_details extends AppCompatActivity implements LocationListene
         });
 
 
-
+        button_back = findViewById(R.id.button_back);
         send = findViewById(R.id.Send);
 
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("Garage");
+                reference = rootNode.getReference("gargae_model");
 
               Toast.makeText(garage_details.this,vehicle_no.getText().toString(),Toast.LENGTH_SHORT);
 
@@ -127,8 +130,8 @@ public class garage_details extends AppCompatActivity implements LocationListene
 
                 );
 
-                reference.child(String.valueOf(maxId+1)).setValue(gargae_model)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
+
+                reference.child(vehicle_no.getText().toString()).setValue(gargae_model).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(garage_details.this, "Data Inserted Successfully!", Toast.LENGTH_SHORT).show();
@@ -138,6 +141,7 @@ public class garage_details extends AppCompatActivity implements LocationListene
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(garage_details.this, "Data Inserted Failed!", Toast.LENGTH_SHORT).show();
+
 
                     }
                 });
@@ -248,8 +252,15 @@ public class garage_details extends AppCompatActivity implements LocationListene
             else
             {
                 Toast.makeText(this, "Permission Denied.", Toast.LENGTH_SHORT).show();
+
+
             }
         }
 
     }
-}
+
+
+
+
+
+    }

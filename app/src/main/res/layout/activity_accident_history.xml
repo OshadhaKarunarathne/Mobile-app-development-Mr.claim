@@ -12,10 +12,10 @@
         android:layout_height="99dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.006"
+        app:layout_constraintVertical_bias="0.08"
         app:srcCompat="@drawable/logo" />
 
     <TextView
@@ -24,9 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="146dp"
         android:layout_marginLeft="146dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="138dp"
-        android:layout_marginRight="138dp"
         android:layout_marginBottom="13dp"
         android:gravity="center_horizontal"
         android:text="MY  CASES"
@@ -34,8 +31,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/myListView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.834"
         tools:ignore="MissingConstraints" />
 
     <ListView
@@ -45,10 +44,12 @@
         android:background="@color/pink"
         android:dividerHeight="1dp"
         android:padding="20dp"
-        tools:layout_editor_absoluteY="152dp" />
-
-
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.986" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

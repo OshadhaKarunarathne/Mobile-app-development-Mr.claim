@@ -3,6 +3,7 @@ package com.example.mrclaim;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -71,6 +72,8 @@ public class ReportAccident extends AppCompatActivity implements LocationListene
          edit_State= (EditText) findViewById(R.id.editState);
          edit_FullAddress= (EditText) findViewById(R.id.editFullAddress);
          mSendData=(Button) findViewById(R.id.SendData);
+
+
          reference=FirebaseDatabase.getInstance().getReference().child("Report");
 
          reference.addValueEventListener(new ValueEventListener() {
@@ -102,11 +105,14 @@ public class ReportAccident extends AppCompatActivity implements LocationListene
                   report.setAddress(edit_FullAddress.getText().toString().trim());
 
 
-                  reference.child(String.valueOf(maxid+1)).setValue(report).addOnSuccessListener(new OnSuccessListener<Void>() {
+                  reference.child(VehicleNo.getText().toString()).setValue(report).addOnSuccessListener(new OnSuccessListener<Void>() {
                       @Override
                       public void onSuccess(Void aVoid) {
 
                           Toast.makeText(ReportAccident.this, "Data Inserted Successfully!", Toast.LENGTH_SHORT).show();
+                          //open image upload activity
+                          Intent intent = new Intent(ReportAccident.this, imgupload.class);
+                          startActivity(intent);
                       }
                   }).addOnFailureListener(new OnFailureListener() {
                       @Override
