@@ -1,6 +1,7 @@
 package com.example.mrclaim;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +43,7 @@ public class VehicleRecViewAdapter extends RecyclerView.Adapter<VehicleRecViewAd
             @Override
             public void onClick(View v) {
                 Toast.makeText(context,vehicles.get(position).getVehino() + "Selected", Toast.LENGTH_SHORT).show();
+
             }
         });
         Glide.with(context).asBitmap().load(vehicles.get(position).getImageurl()).into(holder.image);
