@@ -21,7 +21,7 @@
         </activity>
         <activity android:name=".MyVehicles" />
 
-        <activity android:name=".Imgupload" />
+        <activity android:name=".imgupload" />
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".MyAccident" />
         <activity android:name=".Accident_history" />
