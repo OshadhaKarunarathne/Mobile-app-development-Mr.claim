@@ -5,9 +5,13 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,16 +20,13 @@
         android:roundIcon="@mipmap/mrclaim"
         android:supportsRtl="true"
         android:theme="@style/Theme.MrClaim">
-        <activity android:name=".profile_view">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Profile_View">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".MyVehicles" />
-        <activity android:name=".UserProfile" />
-        <activity android:name=".imgupload" />
+        <activity android:name=".Imgupload" >
+
+        </activity>
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".MyAccident" />
         <activity android:name=".Accident_history" />
@@ -38,8 +39,15 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name=".register" />
     </application>
 
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
 </manifest>
