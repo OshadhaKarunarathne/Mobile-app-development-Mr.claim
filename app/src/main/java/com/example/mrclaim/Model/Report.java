@@ -3,6 +3,8 @@ package com.example.mrclaim.Model;
 // report.java = ReportAccivity firebase connection.
 public class Report {
 
+    private String Mobility;
+    private String EmergencyVehicle;
 
     private String CurrentUID;
     private String VehicleNo;
@@ -25,6 +27,22 @@ public class Report {
 
     public String getVehicleNo() {
         return VehicleNo;
+    }
+
+    public String getMobility() {
+        return Mobility;
+    }
+
+    public void setMobility(String mobility) {
+        Mobility = mobility;
+    }
+
+    public String getEmergencyVehicle() {
+        return EmergencyVehicle;
+    }
+
+    public void setEmergencyVehicle(String emergencyVehicle) {
+        EmergencyVehicle = emergencyVehicle;
     }
 
     public void setVehicleNo(String vehicleNo) {
