@@ -126,7 +126,9 @@
                 android:layout_below="@id/btn_accidents"
                 app:backgroundTint="@null"
                 android:drawableLeft="@drawable/insurance"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:onClick="btn_insurance"
+                />
 
         </LinearLayout>
     </RelativeLayout>

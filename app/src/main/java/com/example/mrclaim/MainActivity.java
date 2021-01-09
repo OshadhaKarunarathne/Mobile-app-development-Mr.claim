@@ -174,5 +174,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(new Intent(MainActivity.this, MyAccident.class));
 
     }
+    public void btn_insurance(View view){
+
+        startActivity(new Intent(MainActivity.this, MyVehicles.class));
+    }
 }
 
