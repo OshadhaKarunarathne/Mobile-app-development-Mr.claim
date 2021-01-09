@@ -16,14 +16,8 @@
         android:roundIcon="@mipmap/mrclaim"
         android:supportsRtl="true"
         android:theme="@style/Theme.MrClaim">
-        <activity android:name=".profile_view">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".MyVehicles">
         </activity>
-        <activity android:name=".MyVehicles" />
         <activity android:name=".UserProfile" />
         <activity android:name=".imgupload" />
         <activity android:name=".ResetPasswordActivity" />

@@ -1,19 +1,29 @@
 package com.example.mrclaim;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
 public class VehicleRecViewAdapter extends RecyclerView.Adapter<VehicleRecViewAdapter.ViewHolder>{
 
     private ArrayList<Vehicle> vehicles= new ArrayList<>();
-    public VehicleRecViewAdapter() {
+
+    private Context context;
+    public VehicleRecViewAdapter(Context context) {
+        this.context = context;
     }
 
     @NonNull
@@ -27,6 +37,14 @@ public class VehicleRecViewAdapter extends RecyclerView.Adapter<VehicleRecViewAd
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.txtVehicle.setText(vehicles.get(position).getVehino());
+        holder.txtdate.setText(vehicles.get(position).getExpdate());
+        holder.parent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context,vehicles.get(position).getVehino() + "Selected", Toast.LENGTH_SHORT).show();
+            }
+        });
+        Glide.with(context).asBitmap().load(vehicles.get(position).getImageurl()).into(holder.image);
 
     }
 
@@ -42,11 +60,16 @@ public class VehicleRecViewAdapter extends RecyclerView.Adapter<VehicleRecViewAd
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView txtVehicle;
+        private TextView txtVehicle,txtdate;
+        private CardView parent;
+        private ImageView image;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtVehicle = itemView.findViewById(R.id.vehi_no);
+            parent= itemView.findViewById(R.id.vehicle_list);
+            txtdate = itemView.findViewById(R.id.exp_date);
+            image = itemView.findViewById(R.id.vehicle_img);
         }
     }
 }
