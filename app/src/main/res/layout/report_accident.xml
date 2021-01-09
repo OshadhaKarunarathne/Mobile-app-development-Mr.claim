@@ -25,25 +25,35 @@
         android:layout_width="363dp"
         android:layout_height="511dp"
         android:layout_below="@id/imageView2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="94dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
+            android:gravity="center_horizontal"
             android:text="Report Accident"
-            android:textSize="20sp"
-            android:gravity="center_horizontal" />
+            android:textAlignment="center"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fill Bellow Details"
             android:layout_marginTop="15sp"
             android:layout_marginBottom="15dp"
-            android:textSize="17sp"/>
+            android:text="Fill Bellow Details"
+            android:textSize="17sp" />
 
         <EditText
             android:id="@+id/Vehicle_No"
@@ -58,11 +68,10 @@
             android:id="@+id/date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Current Time and Date  "
             android:layout_centerHorizontal="true"
             android:drawableEnd="@drawable/ic_time"
             android:drawableRight="@drawable/ic_time"
-            />
+            android:hint="Current Time and Date  " />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -75,10 +84,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5sp"
                 android:layout_weight="1"
-                android:hint="State"
                 android:drawableEnd="@drawable/ic_location"
                 android:drawableRight="@drawable/ic_location"
-                />
+                android:hint="State" />
 
             <EditText
                 android:id="@+id/editCity"
@@ -86,10 +94,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5sp"
                 android:layout_weight="1"
-                android:hint="city"
                 android:drawableEnd="@drawable/ic_location"
                 android:drawableRight="@drawable/ic_location"
-                />
+                android:hint="city" />
         </LinearLayout>
 
         <EditText
@@ -97,10 +104,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5sp"
-            android:hint="Location Address"
             android:drawableEnd="@drawable/ic_location"
             android:drawableRight="@drawable/ic_location"
-            />
+            android:hint="Location Address" />
 
         <Button
             android:id="@+id/btnLocation"
@@ -108,7 +114,7 @@
             android:layout_height="40dp"
             android:layout_below="@id/editFullAddress"
             android:layout_alignRight="@id/editFullAddress"
-          android:layout_gravity="right"
+            android:layout_gravity="right"
             android:layout_marginTop="3dp"
             android:text="Get Location" />
 
@@ -172,8 +178,7 @@
             android:id="@+id/SendData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Next"
-            />
+            android:text="Next" />
 
     </LinearLayout>
 
