@@ -18,17 +18,28 @@
         android:onClick="goBack"/>
 
     <ImageView
-        android:layout_alignParentTop="true"
         android:id="@+id/myaccident_logo"
-        android:layout_width="241dp"
-        android:layout_height="237dp"
-        android:src="@drawable/logo"
-        android:layout_centerHorizontal="true"/>
+        android:layout_width="236dp"
+        android:layout_height="203dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Accidents"
+        android:layout_below="@+id/myaccident_logo"
+        android:layout_centerHorizontal="true"
+        android:textSize="60sp"
+        android:fontFamily="@font/indigo_daisy"
+        android:id="@+id/topic"
+        android:textColor="#873032"
+        android:textStyle="bold"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@id/myaccident_logo"
+        android:layout_below="@id/topic"
         android:layout_centerVertical="true">
         <Button
             android:layout_marginTop="50dp"
