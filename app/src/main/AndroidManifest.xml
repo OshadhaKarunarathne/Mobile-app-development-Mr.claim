@@ -16,13 +16,7 @@
         android:roundIcon="@mipmap/mrclaim"
         android:supportsRtl="true"
         android:theme="@style/Theme.MrClaim">
-        <activity android:name=".profile_view">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".profile_view"/>
         <activity android:name=".MyVehicles" />
         <activity android:name=".UserProfile" />
         <activity android:name=".imgupload" />
@@ -33,11 +27,16 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".garage_details" />
         <activity android:name=".Login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
+            <activity android:name=".NewCase">
+
+
         </activity>
         <activity android:name=".register" />
     </application>
