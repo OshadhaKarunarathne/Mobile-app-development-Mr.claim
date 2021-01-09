@@ -37,6 +37,8 @@
             <activity android:name=".NewCase">
 
 
+
+
         </activity>
         <activity android:name=".register" />
     </application>
