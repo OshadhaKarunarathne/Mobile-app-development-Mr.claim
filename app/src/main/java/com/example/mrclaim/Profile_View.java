@@ -53,7 +53,7 @@ public class Profile_View extends AppCompatActivity {
     Button send;
 
 
-   long maxId=0;
+    long maxId=0;
 
 //database reference
 
@@ -86,12 +86,12 @@ public class Profile_View extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_view);
 
-         initView();
+        initView();
 
-         LoadProfileData();
+        LoadProfileData();
 
-         //insert data
-         send.setOnClickListener(new View.OnClickListener() {
+        //insert data
+        send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
