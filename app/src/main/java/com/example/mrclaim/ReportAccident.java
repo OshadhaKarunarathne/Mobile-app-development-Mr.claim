@@ -49,14 +49,18 @@ public class ReportAccident extends AppCompatActivity implements LocationListene
     EditText edit_FullAddress;
     Button btnShowLocation;
     LocationManager locationManager;
-    RadioButton radioButton,radioButton2,radioButton3,radioButton4;
+    RadioButton radioButton;
+    RadioButton radioButton2;
+    RadioButton radioButton3;
+    RadioButton radioButton4;
     private double latitude;
     private double longitude;
     long maxid=0;
 
+
+
     DatabaseReference reference;
     Report report;
-
 
 
 

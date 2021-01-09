@@ -12,48 +12,56 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="80dp"
-        android:layout_height="73dp"
+        android:layout_width="120dp"
+        android:layout_height="125dp"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_marginTop="23dp"
         android:background="@color/white"
+        android:layout_centerHorizontal="true"
         android:contentDescription="todo"
         app:srcCompat="@drawable/logo" />
 
     <LinearLayout
-        android:layout_width="363dp"
-        android:layout_height="511dp"
+        android:layout_width="341dp"
+        android:layout_marginTop="3dp"
+        android:layout_height="566dp"
         android:layout_below="@id/imageView2"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="94dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:gravity="center_horizontal"
             android:text="Report Accident"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="15sp"
             android:layout_marginBottom="15dp"
             android:text="Fill Bellow Details"
-            android:textSize="17sp" />
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/Vehicle_No"
@@ -111,7 +119,7 @@
         <Button
             android:id="@+id/btnLocation"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_below="@id/editFullAddress"
             android:layout_alignRight="@id/editFullAddress"
             android:layout_gravity="right"
@@ -176,8 +184,9 @@
 
         <Button
             android:id="@+id/SendData"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
             android:text="Next" />
 
     </LinearLayout>
