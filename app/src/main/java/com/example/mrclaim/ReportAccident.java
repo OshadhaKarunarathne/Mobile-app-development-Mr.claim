@@ -49,6 +49,7 @@ public class ReportAccident extends AppCompatActivity implements LocationListene
     EditText edit_FullAddress;
     Button btnShowLocation;
     LocationManager locationManager;
+    RadioButton radioButton,radioButton2,radioButton3,radioButton4;
     private double latitude;
     private double longitude;
     long maxid=0;
@@ -72,6 +73,10 @@ public class ReportAccident extends AppCompatActivity implements LocationListene
          edit_State= (EditText) findViewById(R.id.editState);
          edit_FullAddress= (EditText) findViewById(R.id.editFullAddress);
          mSendData=(Button) findViewById(R.id.SendData);
+         radioButton=(RadioButton)findViewById(R.id.radioButton);
+         radioButton2=(RadioButton)findViewById(R.id.radioButton2);
+         radioButton3=(RadioButton)findViewById(R.id.radioButton3);
+         radioButton4=(RadioButton)findViewById(R.id.radioButton4);
 
 
          reference=FirebaseDatabase.getInstance().getReference().child("Report");
@@ -97,6 +102,23 @@ public class ReportAccident extends AppCompatActivity implements LocationListene
             mSendData.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    String r1=radioButton.getText().toString();
+                    String r2=radioButton2.getText().toString();
+                    String r3=radioButton3.getText().toString();
+                    String r4=radioButton4.getText().toString();
+                    if (radioButton.isChecked()){
+                        report.setMobility(r1);
+
+
+                    }else
+                        report.setMobility(r2);
+
+                    if (radioButton4.isChecked()){
+                        report.setEmergencyVehicle(r4);
+
+                    }else
+                        report.setEmergencyVehicle(r3);
 
                   report.setCurrentUID(FirebaseAuth.getInstance().getUid());
                   report.setVehicleNo(VehicleNo.getText().toString().trim());
@@ -127,12 +149,6 @@ public class ReportAccident extends AppCompatActivity implements LocationListene
                   ;
 
 
-
-
-//                    if (TextUtils.isEmpty((CharSequence) VehicleNo)) {
-//                        VehicleNo.setError("This can not be Empty!");
-//                        return;
-//                    }
                 }
             });
 
