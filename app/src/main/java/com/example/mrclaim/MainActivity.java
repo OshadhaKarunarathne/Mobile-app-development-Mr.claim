@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         startActivity(intent);
                         break;
                     case R.id.profile:
-                        Intent intent1 =new Intent(MainActivity.this,UserProfile.class);
+                        Intent intent1 =new Intent(MainActivity.this,Profile_View.class);
                         startActivity(intent1);
                         break;
                     case R.id.aboutus:
