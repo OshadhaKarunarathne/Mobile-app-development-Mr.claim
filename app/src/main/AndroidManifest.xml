@@ -16,11 +16,9 @@
         android:roundIcon="@mipmap/mrclaim"
         android:supportsRtl="true"
         android:theme="@style/Theme.MrClaim">
-        <activity android:name=".Profile_View">
-
-        </activity>
+        <activity android:name=".AboutUS"></activity>
+        <activity android:name=".Profile_View"></activity>
         <activity android:name=".MyVehicles" />
-
         <activity android:name=".imgupload" />
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".MyAccident" />

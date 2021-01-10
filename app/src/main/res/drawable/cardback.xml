@@ -7,18 +7,16 @@
     <gradient
         android:startColor="@color/app_red"
         android:centerColor="@color/app_red"
-        android:endColor="@color/button_pressed_red"
+        android:endColor="@color/white"
         android:angle="270"/>
     <padding
         android:bottom="5dp"
         android:left="5dp"
         android:right="5dp"
         android:top="5dp"/>
-    <stroke
-        android:width="5dp"
-        android:color="@color/app_red"/>
+
     <corners
-        android:radius="30dp"/>
+        android:radius="60dp"/>
 
 
 </shape>

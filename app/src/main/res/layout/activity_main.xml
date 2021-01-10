@@ -6,7 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity"
-        android:id="@+id/drawer">
+        android:id="@+id/drawer"
+        android:background="@drawable/mainback">
 
         <include
            android:layout_width="match_parent"
@@ -38,7 +39,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/layout_flipper"
-
             android:layout_alignParentTop="true">
 
             <ImageView
