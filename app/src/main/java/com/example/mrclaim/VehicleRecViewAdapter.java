@@ -18,11 +18,12 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class VehicleRecViewAdapter extends RecyclerView.Adapter<VehicleRecViewAdapter.ViewHolder>{
+public class VehicleRecViewAdapter extends RecyclerView.Adapter<VehicleRecViewAdapter.ViewHolder> {
 
-    private ArrayList<Vehicle> vehicles= new ArrayList<>();
+    private ArrayList<Vehicle> vehicles = new ArrayList<>();
 
     private Context context;
+
     public VehicleRecViewAdapter(Context context) {
         this.context = context;
     }
@@ -30,7 +31,7 @@ public class VehicleRecViewAdapter extends RecyclerView.Adapter<VehicleRecViewAd
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.vehicles_list_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.vehicles_list_item, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
@@ -42,7 +43,7 @@ public class VehicleRecViewAdapter extends RecyclerView.Adapter<VehicleRecViewAd
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,vehicles.get(position).getVehino() + "Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, vehicles.get(position).getVehino() + "Selected", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -60,16 +61,16 @@ public class VehicleRecViewAdapter extends RecyclerView.Adapter<VehicleRecViewAd
         notifyDataSetChanged();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView txtVehicle,txtdate;
+        private TextView txtVehicle, txtdate;
         private CardView parent;
         private ImageView image;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtVehicle = itemView.findViewById(R.id.vehi_no);
-            parent= itemView.findViewById(R.id.vehicle_list);
+            parent = itemView.findViewById(R.id.vehicle_list);
             txtdate = itemView.findViewById(R.id.exp_date);
             image = itemView.findViewById(R.id.vehicle_img);
         }

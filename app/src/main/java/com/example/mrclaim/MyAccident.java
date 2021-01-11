@@ -14,19 +14,18 @@ public class MyAccident extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_accident);
-        Button call_agent = (Button)findViewById(R.id.call_agent);
+        Button call_agent = (Button) findViewById(R.id.call_agent);
 
 
         call_agent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String number= "+94 112 123456";
+                String number = "+94 112 123456";
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:"+number));
+                intent.setData(Uri.parse("tel:" + number));
                 startActivity(intent);
             }
         });
-
 
 
     }
@@ -36,17 +35,15 @@ public class MyAccident extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void report(View view){
-        Intent intent = new Intent (MyAccident.this,ReportAccident.class);
+    public void report(View view) {
+        Intent intent = new Intent(MyAccident.this, ReportAccident.class);
         startActivity(intent);
     }
 
-    public void mycases(View view){
-        Intent intent = new Intent(MyAccident.this,Accident_history.class);
+    public void mycases(View view) {
+        Intent intent = new Intent(MyAccident.this, Accident_history.class);
         startActivity(intent);
     }
-
-
 
 
 }
