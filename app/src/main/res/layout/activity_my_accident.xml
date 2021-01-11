@@ -4,18 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyAccident"
-    >
+    tools:context=".MyAccident">
 
     <ImageView
         android:id="@+id/backbtn"
         android:layout_width="50dp"
         android:layout_height="38dp"
-        android:src="@drawable/ic_arrowback"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="10dp"
-        android:onClick="goBack"/>
+        android:onClick="goBack"
+        android:src="@drawable/ic_arrowback" />
 
     <ImageView
         android:id="@+id/myaccident_logo"
@@ -24,62 +23,65 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/logo" />
+
     <TextView
+        android:id="@+id/topic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="My Accidents"
         android:layout_below="@+id/myaccident_logo"
         android:layout_centerHorizontal="true"
-        android:textSize="60sp"
         android:fontFamily="@font/indigo_daisy"
-        android:id="@+id/topic"
+        android:text="My Accidents"
         android:textColor="#873032"
-        android:textStyle="bold"/>
+        android:textSize="60sp"
+        android:textStyle="bold" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_below="@id/topic"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
         <Button
-            android:layout_marginTop="50dp"
             android:id="@+id/accreport"
+            style="@style/button_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:backgroundTint="@null"
-            style="@style/button_theme"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="12dp"
+            android:onClick="report"
             android:text="@string/report_accident"
             android:textSize="40sp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
 
-            android:onClick="report"/>
+            app:backgroundTint="@null" />
 
         <Button
-            android:layout_marginTop="20dp"
             android:id="@+id/call_agent"
+            style="@style/button_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:backgroundTint="@null"
-            style="@style/button_theme"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="12dp"
             android:text="Call Agent"
             android:textSize="40sp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"/>
+            app:backgroundTint="@null" />
 
         <Button
             android:id="@+id/mycases"
-            android:layout_marginTop="20dp"
+            style="@style/button_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:backgroundTint="@null"
+            android:layout_marginLeft="12dp"
 
-            style="@style/button_theme"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="12dp"
+            android:onClick="mycases"
             android:text="My Cases"
             android:textSize="40sp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
-            android:onClick="mycases"/>
+            app:backgroundTint="@null" />
 
 
     </LinearLayout>

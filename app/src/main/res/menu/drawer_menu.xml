@@ -18,7 +18,7 @@
         android:title="My coverage"
         android:icon="@drawable/car"/>
     <item
-        android:id="@+id/aboutus"
+        android:id="@+id/aboutUs"
         android:title="About us"
         android:icon="@drawable/ic_baseline_info_24"/>
     <item

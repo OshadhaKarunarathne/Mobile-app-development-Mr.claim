@@ -125,10 +125,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         Intent intent1 =new Intent(MainActivity.this,Profile_View.class);
                         startActivity(intent1);
                         break;
-                    case R.id.aboutus:
+                    case R.id.aboutUs:
                         Intent intent2 = new Intent(MainActivity.this,AboutUS.class);
                         startActivity(intent2);
-
+                        break;
+                    case R.id.contactus:
+                        Intent intent4 = new Intent(MainActivity.this,ContactUs.class);
+                        startActivity(intent4);
+                        break;
                 }
                 return false;
 

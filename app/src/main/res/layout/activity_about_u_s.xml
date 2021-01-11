@@ -12,9 +12,8 @@
         android:layout_height="41dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:src="@drawable/ic_arrowback"
         android:onClick="goBack"
-        />
+        android:src="@drawable/ic_arrowback" />
 
 
     <ImageView
@@ -22,21 +21,22 @@
         android:layout_width="131dp"
         android:layout_height="87dp"
         android:layout_below="@+id/backbtn"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="2dp"
-        android:src="@drawable/logo"
-        android:layout_marginLeft="10dp"/>
+        android:src="@drawable/logo" />
+
     <TextView
+        android:id="@+id/aboutus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="About Us"
-        android:fontFamily="@font/indigo_daisy"
         android:layout_below="@+id/logo"
         android:layout_centerHorizontal="true"
-        android:id="@+id/aboutus"
-        android:textSize="60sp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/indigo_daisy"
+        android:text="About Us"
         android:textColor="#873032"
-        android:textStyle="italic|bold"
-        android:layout_marginTop="20dp"/>
+        android:textSize="60sp"
+        android:textStyle="italic|bold" />
 
 
     <ImageView
@@ -47,21 +47,21 @@
         android:layout_alignParentRight="true"
         android:layout_marginLeft="144dp"
         android:layout_marginTop="0dp"
+        android:layout_marginRight="10dp"
         android:layout_toRightOf="@+id/logo"
-        android:src="@drawable/insurancelogo"
-        android:layout_marginRight="10dp"/>
+        android:src="@drawable/insurancelogo" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/aboutusPara"
-        android:textSize="26dp"
-        android:gravity="center"
         android:layout_below="@+id/aboutus"
-        android:background="@drawable/aboutusback"
         android:layout_alignParentBottom="true"
+        android:background="@drawable/aboutusback"
+        android:gravity="center"
+        android:text="@string/aboutusPara"
         android:textColor="@color/white"
-        android:textStyle="bold"/>
-
+        android:textSize="28dp"
+        android:textStyle="bold|italic" />
 
 
 </RelativeLayout>
