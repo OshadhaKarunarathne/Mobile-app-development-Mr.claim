@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContactUs">
+    tools:context=".ContactUs"
+    android:background="@drawable/aboutusback">
 
     <ImageView
         android:id="@+id/backbtn"
@@ -16,12 +17,49 @@
         android:onClick="goBack"
         android:src="@drawable/ic_arrowback" />
 
+    <ImageView
+        android:id="@+id/thislogo"
+        android:layout_width="139dp"
+        android:layout_height="72dp"
+        android:layout_below="@id/backbtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/button_disabled"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact Us"
+        android:fontFamily="@font/indigo_daisy"
+        android:layout_below="@id/thislogo"
+        android:id="@+id/topic"
+        android:layout_centerHorizontal="true"
+        android:textSize="50sp"
+        android:textColor="#873032"
+        android:layout_marginVertical="20dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We are always there to help you!"
+        android:layout_below="@id/topic"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:id="@+id/quote"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/roboto_regular"
+        android:textStyle="bold"/>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/backbtn"
+        android:layout_below="@+id/quote"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/firstline">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/CustomerCare"
@@ -98,6 +136,36 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email us:"
+        android:layout_below="@id/firstline"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="20dp"
+        android:id="@+id/eus"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eus"
+        android:elevation="15dp"
+        app:cardCornerRadius="15dp"
+        android:layout_marginHorizontal="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mrclaim.srilanka@yahoo.com"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="#FF5722"/>
+
+    </androidx.cardview.widget.CardView>
+
 
 
 </RelativeLayout>
