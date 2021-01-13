@@ -39,65 +39,65 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
         // image flipper
-        int images[] = {R.drawable.image1,R.drawable.image2,R.drawable.image3};
+        int images[] = {R.drawable.image1, R.drawable.image2, R.drawable.image3};
         viewFlipper = findViewById(R.id.flipper);
-        for(int image: images) {
+        for (int image : images) {
             flipperImages(image);
         }
         //Toolbar
-            toolbar= findViewById(R.id.drawer_toolbar);
-            setSupportActionBar(toolbar);
+        toolbar = findViewById(R.id.drawer_toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-            //Navigation drawer
-            drawerLayout= findViewById(R.id.drawer);
-            navigationView= findViewById(R.id.navigation_view);
-            navigationView.setNavigationItemSelectedListener(this::onNavigationItemSelected);
+        //Navigation drawer
+        drawerLayout = findViewById(R.id.drawer);
+        navigationView = findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(this::onNavigationItemSelected);
 
-            actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout,toolbar,R.string.open, R.string.close);
-            drawerLayout.addDrawerListener(actionBarDrawerToggle);
-            actionBarDrawerToggle.setDrawerIndicatorEnabled(false);
-            actionBarDrawerToggle.syncState();
-            actionBarDrawerToggle.setToolbarNavigationClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    drawerLayout.openDrawer(GravityCompat.START);
-                }
-            });
-            actionBarDrawerToggle.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
-
-            //119 button_
-            Button btn_emergency = (Button)findViewById(R.id.btn_emergency);
-            btn_emergency.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    String number= "119";
-                    Intent intent = new Intent(Intent.ACTION_DIAL);
-                    intent.setData(Uri.parse("tel:"+number));
-                    startActivity(intent);
-                }
-            });
-
-            //emergency vehicle button
-        Button btn_emergency_vehicle = (Button)findViewById(R.id.btn_emergency_vehicle);
-        btn_emergency_vehicle.setOnClickListener(new View.OnClickListener() {
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.setDrawerIndicatorEnabled(false);
+        actionBarDrawerToggle.syncState();
+        actionBarDrawerToggle.setToolbarNavigationClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String number= "1414";
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
+        actionBarDrawerToggle.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
+
+        //119 button_
+        Button btn_emergency = (Button) findViewById(R.id.btn_emergency);
+        btn_emergency.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String number = "119";
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:"+number));
+                intent.setData(Uri.parse("tel:" + number));
                 startActivity(intent);
             }
         });
 
-            //button My Accident
-            button= (Button) findViewById(R.id.btn_accidents);
-            button.setOnClickListener(new View.OnClickListener() {
-               @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(MainActivity.this,MyAccident.class);
-                    startActivity(intent);
-                }
-            });
+        //emergency vehicle button
+        Button btn_emergency_vehicle = (Button) findViewById(R.id.btn_emergency_vehicle);
+        btn_emergency_vehicle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String number = "1414";
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + number));
+                startActivity(intent);
+            }
+        });
+
+        //button My Accident
+        button = (Button) findViewById(R.id.btn_accidents);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MyAccident.class);
+                startActivity(intent);
+            }
+        });
         navigationDrawer();
 
     }
@@ -118,14 +118,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         break;
                     case R.id.log_out:
                         FirebaseAuth.getInstance().signOut();
-                        Intent intent=new Intent(MainActivity.this,Login.class);
+                        Intent intent = new Intent(MainActivity.this, Login.class);
                         startActivity(intent);
                         break;
                     case R.id.profile:
-                        Intent intent1 =new Intent(MainActivity.this,UserProfile.class);
+                        Intent intent1 = new Intent(MainActivity.this, Profile_View.class);
                         startActivity(intent1);
                         break;
-
+                    case R.id.aboutUs:
+                        Intent intent2 = new Intent(MainActivity.this, AboutUS.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.contactus:
+                        Intent intent4 = new Intent(MainActivity.this, ContactUs.class);
+                        startActivity(intent4);
+                        break;
                 }
                 return false;
 
@@ -133,6 +140,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         });
     }
+
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerVisible(GravityCompat.START))
@@ -154,10 +162,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         viewFlipper.setOutAnimation(this, android.R.anim.slide_out_right);
 
     }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.log_out){
-            Intent intent = new Intent(MainActivity.this,MyAccident.class);
+        if (item.getItemId() == R.id.log_out) {
+            Intent intent = new Intent(MainActivity.this, MyAccident.class);
             startActivity(intent);
         }
         return true;
@@ -166,15 +175,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.action_bar_menu,menu);
+        inflater.inflate(R.menu.action_bar_menu, menu);
         return true;
     }
 
-    public void btn_accidents(View view){
+    public void btn_accidents(View view) {
         startActivity(new Intent(MainActivity.this, MyAccident.class));
 
     }
-    public void btn_insurance(View view){
+
+    public void btn_insurance(View view) {
 
         startActivity(new Intent(MainActivity.this, MyVehicles.class));
     }

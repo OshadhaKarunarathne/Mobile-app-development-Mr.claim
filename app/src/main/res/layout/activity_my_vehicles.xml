@@ -5,12 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MyVehicles"
-    android:padding="10dp">
+    >
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/topic"
+    android:background="@color/white">
+    <ImageView
+        android:id="@+id/backbtn"
+        android:layout_width="50dp"
+        android:layout_height="38dp"
+        android:src="@drawable/ic_arrowback"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:onClick="goBack"/>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="119dp"
+        android:layout_height="118dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:text="My Vehicles"
+        android:textSize="60sp"
+        android:textStyle="bold|italic"
+        android:id="@+id/vehicles_topic"
+        android:fontFamily="@font/indigo_daisy"
+        android:textColor="#393C3B"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/topic"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/MyVehiclesView"/>
+        android:id="@+id/MyVehiclesView"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/cardback"/>
 
 
 </RelativeLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutUS">
+
+    <ImageView
+        android:id="@+id/backbtn"
+        android:layout_width="47dp"
+        android:layout_height="41dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:onClick="goBack"
+        android:src="@drawable/ic_arrowback" />
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="131dp"
+        android:layout_height="87dp"
+        android:layout_below="@+id/backbtn"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/aboutus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/indigo_daisy"
+        android:text="About Us"
+        android:textColor="#873032"
+        android:textSize="60sp"
+        android:textStyle="italic|bold" />
+
+
+    <ImageView
+        android:layout_width="125dp"
+        android:layout_height="89dp"
+        android:layout_alignTop="@+id/logo"
+        android:layout_alignBottom="@+id/logo"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/logo"
+        android:src="@drawable/insurancelogo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aboutus"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/aboutusback"
+        android:gravity="center"
+        android:text="@string/aboutusPara"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        android:textStyle="bold|italic" />
+
+
+</RelativeLayout>
