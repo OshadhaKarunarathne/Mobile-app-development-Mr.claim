@@ -137,7 +137,7 @@ public class ReportAccident extends AppCompatActivity implements LocationListene
 
                           Toast.makeText(ReportAccident.this, "Data Inserted Successfully!", Toast.LENGTH_SHORT).show();
                           //open image upload activity
-                          Intent intent = new Intent(ReportAccident.this, imgupload.class);
+                          Intent intent = new Intent(ReportAccident.this, Imgupload.class);
                           startActivity(intent);
                       }
                   }).addOnFailureListener(new OnFailureListener() {
