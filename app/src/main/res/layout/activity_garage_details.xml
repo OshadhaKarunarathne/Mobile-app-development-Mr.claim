@@ -40,8 +40,6 @@
         android:id="@+id/btnLocation"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-
-
         android:layout_gravity="right"
         android:text="Get Location"
         app:layout_constraintBottom_toBottomOf="parent"

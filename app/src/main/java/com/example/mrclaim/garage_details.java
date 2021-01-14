@@ -155,7 +155,13 @@ public class garage_details extends AppCompatActivity implements LocationListene
                 reference.child(vehicle_no.getText().toString()).setValue(gargae_model).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(garage_details.this, "Data Inserted Successfully!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(garage_details.this,  "Data Inserted Successfully!", Toast.LENGTH_SHORT).show();
+
+                        //send to final instruction activity
+
+                        Intent intent = new Intent(garage_details.this,Final_instructions.class);
+                        startActivity(intent);
+
 
                     }
                 }).addOnFailureListener(new OnFailureListener() {
