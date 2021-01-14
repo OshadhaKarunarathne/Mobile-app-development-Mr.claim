@@ -1,6 +1,7 @@
 package com.example.mrclaim;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -71,6 +72,11 @@ public class NewCase extends AppCompatActivity  {
 
 
 }
+
+    public void mycases(View view) {
+        Intent inent = new Intent(this, Accident_history.class);
+        startActivity(inent);
+    }
 }
 
 

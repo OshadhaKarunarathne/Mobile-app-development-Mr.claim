@@ -70,6 +70,11 @@ public class Imgupload extends AppCompatActivity {
 
                                 Toast.makeText(Imgupload.this, "Image Upload Success !", Toast.LENGTH_SHORT).show();
 
+                                //send to final instruction activity
+
+                                Intent intent = new Intent(Imgupload.this,Final_instructions.class);
+                                startActivity(intent);
+
 
                                 //to set picked data to current user data
 
