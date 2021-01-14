@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class NewCase extends AppCompatActivity  {
 
-    TextView a,b,c,d;
+    TextView a,b,c,d,e;
     Button display;
 
     DatabaseReference reff;
@@ -35,6 +35,7 @@ public class NewCase extends AppCompatActivity  {
         b=(TextView) findViewById(R.id.second);
         c=(TextView) findViewById(R.id.third);
         d=(TextView) findViewById(R.id.fourth);
+        e=(TextView) findViewById(R.id.fifth);
 
         display = findViewById(R.id.Display);
 
@@ -59,6 +60,7 @@ public class NewCase extends AppCompatActivity  {
                     b.setText(vehicleno);
                     c.setText(dateandtime);
                     d.setText(location);
+                    e.setText(emergencyv);
                 }
 
                 @Override
