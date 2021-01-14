@@ -128,8 +128,29 @@ public class garage_details extends AppCompatActivity implements LocationListene
                         timedate.getText().toString(),
                         FullAddress.getText().toString()
 
+
+
                 );
 
+                String  vn=vehicle_no.getText().toString();
+                String  g=gname.getText().toString();
+              //  String  td=timedate.getText().toString();
+                String  fa=FullAddress.getText().toString();
+              //  String  cd=casedetails.getText().toString();
+
+                if (TextUtils.isEmpty(vn)) {
+                    vehicle_no.setError("vehicle no is Required!");
+                    return;
+                }
+                if (TextUtils.isEmpty(g)) {
+                    gname.setError("Garage name is Required!");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(fa)) {
+                    FullAddress.setError("Full address is Required!");
+                    return;
+                }
 
                 reference.child(vehicle_no.getText().toString()).setValue(gargae_model).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -201,6 +222,9 @@ public class garage_details extends AppCompatActivity implements LocationListene
         casedetails = findViewById(R.id.casedetails);
         btnLocation = findViewById(R.id.btnLocation);
         send = findViewById(R.id.SendData);
+
+
+
         }
 
     @Override

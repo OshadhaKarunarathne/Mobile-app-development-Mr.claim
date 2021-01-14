@@ -27,14 +27,15 @@
         <activity android:name=".Accident_history" />
         <activity android:name=".ReportAccident" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".garage_details" />
+        <activity android:name=".garage_details" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
         <activity android:name=".Login"></activity>
         <activity android:name=".NewCase">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".register" />
     </application>
