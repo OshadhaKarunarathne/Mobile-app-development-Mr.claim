@@ -20,7 +20,8 @@
         android:roundIcon="@mipmap/mrclaim"
         android:supportsRtl="true"
         android:theme="@style/Theme.MrClaim">
-        <activity android:name=".Final_instructions"></activity>
+        <activity android:name=".SelectedVehicle"></activity>
+        <activity android:name=".Final_instructions" />
         <activity android:name=".Instruction" />
         <activity android:name=".ContactUs" />
         <activity android:name=".AboutUS" />
@@ -30,15 +31,17 @@
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".MyAccident" />
         <activity android:name=".Accident_history" />
-        <activity android:name=".ReportAccident"></activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".garage_details" />
-        <activity android:name=".Login">
+        <activity android:name=".ReportAccident" />
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".garage_details" />
+        <activity android:name=".Login">
+
         </activity>
         <activity android:name=".NewCase"></activity>
         <activity android:name=".register" />

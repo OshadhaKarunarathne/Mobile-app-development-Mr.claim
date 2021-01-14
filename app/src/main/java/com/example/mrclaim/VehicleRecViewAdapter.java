@@ -2,6 +2,7 @@ package com.example.mrclaim;
 
 import android.content.Context;
 import android.content.Intent;
+import android.telecom.Call;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,6 +45,9 @@ public class VehicleRecViewAdapter extends RecyclerView.Adapter<VehicleRecViewAd
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, vehicles.get(position).getVehino() + "Selected", Toast.LENGTH_SHORT).show();
+                Intent i =new Intent(v.getContext(),SelectedVehicle.class);
+                i.putExtra("title",vehicles.get(position));
+                v.getContext().startActivity(i);
 
             }
         });
@@ -69,6 +73,15 @@ public class VehicleRecViewAdapter extends RecyclerView.Adapter<VehicleRecViewAd
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Intent i =new Intent(v.getContext(),SelectedVehicle.class);
+//                    i.putExtra("title",vehicles);
+//                    v.getContext().startActivity(i);
+//                }
+//            });
             txtVehicle = itemView.findViewById(R.id.vehi_no);
             parent = itemView.findViewById(R.id.vehicle_list);
             txtdate = itemView.findViewById(R.id.exp_date);
