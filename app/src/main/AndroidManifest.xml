@@ -16,18 +16,20 @@
         android:roundIcon="@mipmap/mrclaim"
         android:supportsRtl="true"
         android:theme="@style/Theme.MrClaim">
-        <activity android:name=".ContactUs"/>
+        <activity android:name=".Instruction"></activity>
+        <activity android:name=".ContactUs" />
         <activity android:name=".AboutUS" />
         <activity android:name=".Profile_View" />
         <activity android:name=".MyVehicles" />
-        <activity android:name=".imgupload" />
+        <activity android:name=".Imgupload"></activity>
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".MyAccident" />
         <activity android:name=".Accident_history" />
         <activity android:name=".ReportAccident" />
         <activity android:name=".MainActivity" />
         <activity android:name=".garage_details" />
-        <activity android:name=".Login">
+        <activity android:name=".Login"></activity>
+        <activity android:name=".NewCase">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

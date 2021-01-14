@@ -201,7 +201,7 @@ public class garage_details extends AppCompatActivity implements LocationListene
         casedetails = findViewById(R.id.casedetails);
         btnLocation = findViewById(R.id.btnLocation);
         send = findViewById(R.id.SendData);
-    }
+        }
 
     @Override
     public void onLocationChanged(@NonNull Location location) {
