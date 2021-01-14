@@ -137,4 +137,9 @@ public class Imgupload extends AppCompatActivity {
             img.setImageURI(imageUri);
         }
     }
+
+    public void next(View view) {
+        Intent intent = new Intent(Imgupload.this, NewCase.class);
+        startActivity(intent);
+    }
 }
