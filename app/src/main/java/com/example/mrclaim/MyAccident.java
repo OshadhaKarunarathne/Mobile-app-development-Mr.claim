@@ -36,7 +36,7 @@ public class MyAccident extends AppCompatActivity {
     }
 
     public void report(View view) {
-        Intent intent = new Intent(MyAccident.this, ReportAccident.class);
+        Intent intent = new Intent(MyAccident.this, Instruction.class);
         startActivity(intent);
     }
 

@@ -82,8 +82,34 @@ public class ReportAccident extends AppCompatActivity implements LocationListene
          radioButton3=(RadioButton)findViewById(R.id.radioButton3);
          radioButton4=(RadioButton)findViewById(R.id.radioButton4);
 
+//        String state =edit_State.getText().toString();
+//        String city =edit_City.getText().toString();
+//        String address =edit_FullAddress.getText().toString();
+//        String vn =VehicleNo.getText().toString();
+//
+//        if (TextUtils.isEmpty(vn)) {
+//            VehicleNo.setError("vehicle no is Required!");
+//            return;
+//        }
+//
+//        if (TextUtils.isEmpty(address)) {
+//            edit_FullAddress.setError("Address no is Required!");
+//            return;
+//        }
+//
+//        if (TextUtils.isEmpty(city)) {
+//            edit_City.setError("city no is Required!");
+//            return;
+//        }
+//
+//        if (TextUtils.isEmpty(state)) {
+//            edit_State.setError("state no is Required!");
+//            return;
+//        }
 
-         reference=FirebaseDatabase.getInstance().getReference().child("Report");
+
+
+        reference=FirebaseDatabase.getInstance().getReference().child("Report");
 
          reference.addValueEventListener(new ValueEventListener() {
              @Override
@@ -129,6 +155,33 @@ public class ReportAccident extends AppCompatActivity implements LocationListene
                   report.setDateTime(DateandTime.getText().toString().trim());
                   report.setCity(edit_City.getText().toString().trim());
                   report.setAddress(edit_FullAddress.getText().toString().trim());
+
+                    String state =edit_State.getText().toString();
+                    String city =edit_City.getText().toString();
+                    String address =edit_FullAddress.getText().toString();
+                    String vn =VehicleNo.getText().toString();
+
+                    if (TextUtils.isEmpty(vn)) {
+                        VehicleNo.setError("vehicle no is Required!");
+                        return;
+                    }
+
+
+                    if (TextUtils.isEmpty(city)) {
+                        edit_City.setError("city no is Required!");
+                        return;
+                    }
+
+                    if (TextUtils.isEmpty(state)) {
+                        edit_State.setError("state no is Required!");
+                        return;
+                    }
+
+
+                    if (TextUtils.isEmpty(address)) {
+                        edit_FullAddress.setError("Address no is Required!");
+                        return;
+                    }
 
 
                   reference.child(VehicleNo.getText().toString()).setValue(report).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -192,6 +245,8 @@ public class ReportAccident extends AppCompatActivity implements LocationListene
         edit_City = findViewById(R.id.editCity);
         edit_FullAddress = findViewById(R.id.editFullAddress);
         btnShowLocation = findViewById(R.id.btnLocation);
+
+
     }
 
 
