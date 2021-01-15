@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -58,5 +59,9 @@ public class SelectedVehicle extends AppCompatActivity {
 
 
 
+    }
+    public void goBack(View view) {
+        Intent intent = new Intent(SelectedVehicle.this, MyVehicles.class);
+        startActivity(intent);
     }
 }
