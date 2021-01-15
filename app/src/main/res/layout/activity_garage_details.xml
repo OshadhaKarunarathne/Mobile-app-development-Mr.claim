@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".garage_details">
 
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="80dp"
@@ -16,52 +17,39 @@
         android:contentDescription="todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.066"
+        app:layout_constraintVertical_bias="0.045"
         app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/indigo_daisy"
         android:text="Garage details"
-        android:textSize="30sp"
+        android:textColor="#873032"
+        android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.738"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.088" />
-
-
-    <Button
-        android:id="@+id/btnLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_gravity="right"
-        android:text="Get Location"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.837" />
+        app:layout_constraintVertical_bias="0.154" />
 
     <Button
         android:id="@+id/button_back"
         android:layout_width="147dp"
         android:layout_height="39dp"
         android:layout_gravity="center"
-        android:text="Back"
         android:onClick="button_back"
+        android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971" />
+        app:layout_constraintVertical_bias="0.826" />
 
     <Button
         android:id="@+id/Send"
@@ -71,10 +59,10 @@
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.882"
+        app:layout_constraintHorizontal_bias="0.859"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971" />
+        app:layout_constraintVertical_bias="0.826" />
 
     <TextView
         android:id="@+id/textView15"
@@ -87,16 +75,16 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.893"
+        app:layout_constraintVertical_bias="0.929"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="386dp"
-        android:layout_height="333dp"
+        android:layout_width="384dp"
+        android:layout_height="297dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,6 +100,7 @@
             android:layout_marginTop="15sp"
             android:layout_marginBottom="15dp"
             android:text="Fill Bellow Details"
+            android:textColor="@color/black"
             android:textSize="17sp" />
 
         <EditText
@@ -128,8 +117,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Garage name" />
+            android:hint="Garage name"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/timedate"
@@ -141,9 +130,6 @@
             android:hint="Current Time and Date  " />
 
 
-
-
-
         <EditText
             android:id="@+id/FullAddress"
             android:layout_width="match_parent"
@@ -152,18 +138,25 @@
             android:drawableEnd="@drawable/ic_location"
             android:drawableRight="@drawable/ic_location"
             android:hint="Location Address" />
+
+        <Button
+            android:id="@+id/btnLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="right"
+            android:text="Get Location" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/casedetails"
-        android:textSize="20dp"
         android:layout_width="337dp"
         android:layout_height="61dp"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.215" />
+        app:layout_constraintVertical_bias="0.249" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
