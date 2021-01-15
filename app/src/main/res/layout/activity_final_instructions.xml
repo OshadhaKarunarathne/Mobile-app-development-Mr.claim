@@ -31,6 +31,7 @@
         app:srcCompat="@drawable/logo"
         tools:ignore="MissingConstraints" />
 
+
     <Button
         android:id="@+id/Home"
         android:layout_width="wrap_content"
@@ -48,6 +49,10 @@
         android:id="@+id/Instruction"
         android:layout_width="303dp"
         android:layout_height="262dp"
+        android:text="Our Agent Will Call You Within 5 Minutes.       Do Not Move Your Vehicle Until We Inform "
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
