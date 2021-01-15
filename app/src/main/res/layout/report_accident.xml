@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ReportAccident"
     android:orientation="vertical"
-    android:padding="30dp">
+    android:padding="20dp">
 
 
     <ImageView
@@ -45,10 +45,11 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:gravity="center_horizontal"
+            android:textColor="#873032"
+            android:textSize="60sp"
             android:text="Report Accident"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20sp"
+            android:fontFamily="@font/indigo_daisy"
             android:textStyle="bold" />
 
         <TextView
