@@ -22,9 +22,9 @@ public class MyVehicles extends AppCompatActivity {
 
         MyVehiclesRecyclerView = findViewById(R.id.MyVehiclesView);
         ArrayList<Vehicle> vehicles = new ArrayList<>();
-        vehicles.add(new Vehicle("110-4321", "12-02-2021","https://i.ebayimg.com/images/g/h4EAAOSwqYBbQkKM/s-l400.jpg"));
-        vehicles.add(new Vehicle("18-1234","22-03-2021","https://www.autobay.lk/wp-content/uploads/2012/10/911821-500x374.jpg"));
-        vehicles.add(new Vehicle("GA-5467","24-05-2021","https://image-cdn.beforward.jp/files/pictures/001/61488/BF67373_1.jpg"));
+        vehicles.add(new Vehicle("110-4321", "12-02-2021","https://i.ebayimg.com/images/g/h4EAAOSwqYBbQkKM/s-l400.jpg", "HONDA CD125T","Black","CD632245731","6473247235","125cc"));
+        vehicles.add(new Vehicle("18-1234","22-03-2021","https://www.autobay.lk/wp-content/uploads/2012/10/911821-500x374.jpg","MITSUBHISHI Lancer C12","White","MT7324672374","88783786686","1500cc"));
+        vehicles.add(new Vehicle("GA-5467","24-05-2021","https://image-cdn.beforward.jp/files/pictures/001/61488/BF67373_1.jpg","TOYOTA EH110","White","TY12389634597","9748785996945","1500cc"));
         VehicleRecViewAdapter adapter= new VehicleRecViewAdapter(this);
         adapter.setVehicles(vehicles);
 

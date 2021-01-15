@@ -1,26 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SelectedVehicle"
-    android:orientation="vertical"
-    android:gravity="center">
+    tools:context=".SelectedVehicle">
 
     <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/vehno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/roboto_regular"
+        android:text="sample 1"
+        android:textColor="#873032"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/imagecar"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:id="@+id/imagecar"/>
-    <TextView
-        android:id="@+id/sample1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="26sp" />
-    <TextView
-        android:id="@+id/sample2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="26sp" />
+        android:layout_below="@+id/vehno"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logo" />
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imagecar">
+
+        <LinearLayout
+            android:id="@+id/exp_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="30sp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:text="Expire date :"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/exp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imagecar"
+                android:layout_centerHorizontal="true"
+                android:text="expdate"
+                android:textSize="26sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/vehimodel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/exp_date"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="30sp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:text="Model :"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/model"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/exp"
+                android:layout_centerHorizontal="true"
+                android:text="model"
+                android:textSize="26sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/vehicolor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vehimodel"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="30sp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:text="Color :"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/model"
+                android:layout_centerHorizontal="true"
+                android:text="color"
+                android:textSize="26sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/chass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vehicolor"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="30sp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:text="Chassis no :"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/chassis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/color"
+                android:layout_centerHorizontal="true"
+                android:text="chassis"
+                android:textSize="26sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/engine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chass"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="30sp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:text="Engine No :"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/engineNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/chassis"
+                android:layout_centerHorizontal="true"
+                android:text="engineNo"
+                android:textSize="26sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/capacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/engine"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="30sp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:text="Capacity :"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/engineCap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/engineNo"
+                android:layout_centerHorizontal="true"
+                android:text="engineCap"
+                android:textSize="26sp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

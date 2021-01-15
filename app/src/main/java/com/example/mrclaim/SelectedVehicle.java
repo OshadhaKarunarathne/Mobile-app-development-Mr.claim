@@ -25,15 +25,38 @@ public class SelectedVehicle extends AppCompatActivity {
         String imageUrl = vehicle.getImageurl();
         String Vehino = vehicle.getVehino();
         String expdate = vehicle.getExpdate();
+        String model = vehicle.getModel();
+        String color = vehicle.getColor();
+        String chassisNo = vehicle.getChassisNo();
+        String engineNo = vehicle.getEngineNo();
+        String engcapacity = vehicle.getEngcapacity();
+
 
         ImageView imageView = findViewById(R.id.imagecar);
         Glide.with(this).asBitmap().load(imageUrl).into(imageView);
 
-        TextView textView1 = findViewById(R.id.sample1);
+        TextView textView1 = findViewById(R.id.vehno);
         textView1.setText((Vehino));
 
-        TextView textView2 = findViewById(R.id.sample2);
+        TextView textView2 = findViewById(R.id.exp);
         textView2.setText(expdate);
+
+        TextView textView3 = findViewById(R.id.model);
+        textView3.setText(model);
+
+        TextView textView4 = findViewById(R.id.color);
+        textView4.setText(color);
+
+        TextView textView5 = findViewById(R.id.chassis);
+        textView5.setText(chassisNo);
+
+        TextView textView6 = findViewById(R.id.engineNo);
+        textView6.setText(engineNo);
+
+        TextView textView7 = findViewById(R.id.engineCap);
+        textView7.setText(engcapacity);
+
+
 
     }
 }

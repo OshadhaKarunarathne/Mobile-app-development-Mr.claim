@@ -45,10 +45,9 @@ public class VehicleRecViewAdapter extends RecyclerView.Adapter<VehicleRecViewAd
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, vehicles.get(position).getVehino() + "Selected", Toast.LENGTH_SHORT).show();
-                Intent i =new Intent(v.getContext(),SelectedVehicle.class);
-                i.putExtra("title",vehicles.get(position));
+                Intent i = new Intent(v.getContext(), SelectedVehicle.class);
+                i.putExtra("title", vehicles.get(position));
                 v.getContext().startActivity(i);
-
             }
         });
         Glide.with(context).asBitmap().load(vehicles.get(position).getImageurl()).into(holder.image);
@@ -86,6 +85,7 @@ public class VehicleRecViewAdapter extends RecyclerView.Adapter<VehicleRecViewAd
             parent = itemView.findViewById(R.id.vehicle_list);
             txtdate = itemView.findViewById(R.id.exp_date);
             image = itemView.findViewById(R.id.vehicle_img);
+
         }
     }
 }
