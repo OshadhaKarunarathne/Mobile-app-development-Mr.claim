@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Mrclaim</string>
+    <string name="aboutusPara">
+        We, Mr.Claim team work in corporate with ABC insurance company as a third party mobile application in order to automate the accident reporting
+        process and give you handful opportunities to save your valuable time in insurance processes.
+    </string>
 </resources>
