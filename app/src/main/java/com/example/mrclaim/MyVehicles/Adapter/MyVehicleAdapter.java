@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mrclaim.Model.MyVehicle_Model;
 import com.example.mrclaim.MyVehicles.SelectedVehicle;
+import com.example.mrclaim.MyVehicles.SelectedVehicleActivity;
 import com.example.mrclaim.R;
-import com.example.mrclaim.ShowCase.Adpater.CaseViewAdapter;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
@@ -53,12 +53,12 @@ public class MyVehicleAdapter extends   RecyclerView.Adapter<MyVehicleAdapter.My
         holder.EngineNo.setText(report_modelList.get(position).getEngineNo()+"");
         holder.EXDate.setText(report_modelList.get(position).getExDate()+"");
         holder.Color.setText(report_modelList.get(position).getColor()+"");
-        holder.Vehino.setText(report_modelList.get(position).getVehino()+"");
+        holder.Vehino.setText(report_modelList.get(position).getVehicleNo()+"");
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,report_modelList.get(position).getModel() + "Selected",Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(v.getContext(), SelectedVehicle.class);
+           Toast.makeText(context,report_modelList.get(position).getModel() + "Selected",Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(v.getContext(), SelectedVehicleActivity.class);
                 i.putExtra("title", report_modelList.get(position));
                 v.getContext().startActivity(i);
             }

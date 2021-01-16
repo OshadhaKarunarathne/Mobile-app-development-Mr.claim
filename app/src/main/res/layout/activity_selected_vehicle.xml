@@ -7,6 +7,9 @@
     tools:context=".MyVehicles.SelectedVehicle">
 
 
-
-
+    <TextView
+        android:id="@+id/Vehicle_No"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 </RelativeLayout>

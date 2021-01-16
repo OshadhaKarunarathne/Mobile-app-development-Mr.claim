@@ -44,7 +44,7 @@ public class MyVehicle_Model implements Parcelable {
     private  String Model;
     private  String currentUID;
     private  String imagePath;
-    private  String Vehino;
+    private  String VehicleNo;
 
 
 
@@ -57,7 +57,7 @@ public class MyVehicle_Model implements Parcelable {
         Model = in.readString();
         currentUID = in.readString();
         imagePath = in.readString();
-        Vehino = in.readString();
+        VehicleNo = in.readString();
     }
 
     public static final Creator<MyVehicle_Model> CREATOR = new Creator<MyVehicle_Model>() {
@@ -71,12 +71,12 @@ public class MyVehicle_Model implements Parcelable {
             return new MyVehicle_Model[size];
         }
     };
-    public String getVehino() {
-        return Vehino;
+    public String getVehicleNo() {
+        return VehicleNo;
     }
 
-    public void setVehino(String vehino) {
-        Vehino = vehino;
+    public void setVehicleNo(String vehicleNo) {
+        VehicleNo = vehicleNo;
     }
 
 
@@ -122,6 +122,6 @@ public class MyVehicle_Model implements Parcelable {
         dest.writeString(Model);
         dest.writeString(currentUID);
         dest.writeString(imagePath);
-        dest.writeString(Vehino);
+        dest.writeString(VehicleNo);
     }
 }

@@ -20,16 +20,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mrclaim">
-        <activity android:name=".AboutUS"></activity>
-        <activity android:name=".ContactUs"></activity>
-        <activity android:name=".MyVehicles.MyVehiclesActivity"></activity>
+        <activity android:name=".MyVehicles.SelectedVehicleActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity android:name=".AboutUS" />
+        <activity android:name=".ContactUs" />
+        <activity android:name=".MyVehicles.MyVehiclesActivity">
+
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+
+
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+
+
+        </activity>
         <activity android:name=".ShowCase.GrageDetailsActivity" />
         <activity android:name=".ShowCase.ShowCaseActivity" />
         <activity android:name=".MyAccidents.Final_instructionsActivity">
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
-
 
 
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
@@ -49,14 +65,8 @@
             <!-- </intent-filter> -->
         </activity>
         <activity android:name=".SignPack.RegisterActivity" />
-        <activity android:name=".SignPack.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Home"></activity>
+        <activity android:name=".SignPack.LoginActivity"></activity>
+        <activity android:name=".Home" />
     </application>
 
 </manifest>
