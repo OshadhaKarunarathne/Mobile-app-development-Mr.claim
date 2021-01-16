@@ -1,16 +1,20 @@
 package com.example.mrclaim.MyVehicles.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mrclaim.Model.MyVehicle_Model;
+import com.example.mrclaim.MyVehicles.SelectedVehicle;
 import com.example.mrclaim.R;
 import com.example.mrclaim.ShowCase.Adpater.CaseViewAdapter;
 import com.squareup.picasso.MemoryPolicy;
@@ -49,6 +53,17 @@ public class MyVehicleAdapter extends   RecyclerView.Adapter<MyVehicleAdapter.My
         holder.EngineNo.setText(report_modelList.get(position).getEngineNo()+"");
         holder.EXDate.setText(report_modelList.get(position).getExDate()+"");
         holder.Color.setText(report_modelList.get(position).getColor()+"");
+        holder.Vehino.setText(report_modelList.get(position).getVehino()+"");
+        holder.parent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context,report_modelList.get(position).getModel() + "Selected",Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(v.getContext(), SelectedVehicle.class);
+                i.putExtra("title", report_modelList.get(position));
+                v.getContext().startActivity(i);
+            }
+        });
+
         try{
             Picasso.get().load( report_modelList.get( position ).getImagePath() )
                     .networkPolicy( NetworkPolicy.NO_CACHE)
@@ -72,11 +87,12 @@ public class MyVehicleAdapter extends   RecyclerView.Adapter<MyVehicleAdapter.My
     static class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView car_image;
-        TextView Model;
+        TextView Model,Vehino;
         TextView Capacity;
         TextView EngineNo;
         TextView EXDate;
         TextView Color;
+        CardView parent;
 
         public MyViewHolder(@NonNull View itemView) {
                     super(itemView);
@@ -88,6 +104,8 @@ public class MyVehicleAdapter extends   RecyclerView.Adapter<MyVehicleAdapter.My
                     EngineNo=itemView.findViewById(R.id.EngineNo);
                     EXDate=itemView.findViewById(R.id.EXDate);
                     Color=itemView.findViewById(R.id.Color);
+                    Vehino = itemView.findViewById(R.id.Vehicle_Nom);
+                    parent = itemView.findViewById(R.id.parent);
                 }
     }
 }
