@@ -26,7 +26,7 @@ public class MyAccidentNavActivity extends AppCompatActivity {
 
     public void goToReportAccident(View view) {
 
-        startActivity(new Intent(MyAccidentNavActivity.this, ReportAccidentActivity.class));
+        startActivity(new Intent(MyAccidentNavActivity.this, Instruction.class));
     }
 
     public void goToShowCase(View view) {
