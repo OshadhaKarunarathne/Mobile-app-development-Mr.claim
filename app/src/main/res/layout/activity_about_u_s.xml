@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AboutUS">
-
     <ImageView
         android:id="@+id/backbtn"
         android:layout_width="47dp"
@@ -60,8 +59,10 @@
         android:gravity="center"
         android:text="@string/aboutusPara"
         android:textColor="@color/white"
-        android:textSize="28dp"
+        android:textSize="28sp"
         android:textStyle="bold|italic" />
+
+
 
 
 </RelativeLayout>

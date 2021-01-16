@@ -1,11 +1,9 @@
 package com.example.mrclaim.Model;
 
-import android.widget.TextView;
-
 public class Profile_model {
 
 
-    public  Profile_model(){}
+    public Profile_model(){}
 
     private String currentUID;
     private String firstname;

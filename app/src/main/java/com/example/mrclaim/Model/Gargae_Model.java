@@ -2,7 +2,7 @@ package com.example.mrclaim.Model;
 
 public class Gargae_Model {
 
-    public  Gargae_Model(){}
+    public Gargae_Model(){}
 
     private String CurrentUID;
     private  String  Vehicle_No;

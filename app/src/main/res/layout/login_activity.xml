@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
-
+    tools:context=".SignPack.LoginActivity">
     <Button
         android:id="@+id/button2"
         android:layout_width="373dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:onClick="Regsiter"
+        android:onClick="goToRegister"
         android:text="REGISTER"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +25,7 @@
         android:layout_width="373dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:onClick="login"
+        android:onClick="LoginMethod"
         android:text="lOGIN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,7 +96,7 @@
         android:layout_gravity="center_horizontal"
         android:clickable="true"
         android:gravity="center"
-        android:onClick="NavigateForgetMyPassword"
+        android:onClick="goToForgotPassword"
         android:text="forgot your password?"
         android:textColor="@color/black"
         android:textSize="15sp"
@@ -107,9 +106,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.824"
         tools:ignore="MissingConstraints" />
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

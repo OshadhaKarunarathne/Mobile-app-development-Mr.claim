@@ -13,8 +13,7 @@ public class ContactUs extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact_us);
-        CardView customer_care = (CardView) findViewById(R.id.CustomerCare);
+        setContentView(R.layout.activity_contact_us);  CardView customer_care = (CardView) findViewById(R.id.CustomerCare);
         CardView hotline = (CardView) findViewById(R.id.emergency_call);
 
         customer_care.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +37,7 @@ public class ContactUs extends AppCompatActivity {
     }
 
     public void goBack(View view) {
-        Intent intent = new Intent(ContactUs.this, MainActivity.class);
+        Intent intent = new Intent(ContactUs.this, Home.class);
         startActivity(intent);
     }
 }
