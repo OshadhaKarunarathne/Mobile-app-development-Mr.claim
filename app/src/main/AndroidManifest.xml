@@ -31,12 +31,12 @@
         <activity android:name=".ContactUs" />
         <activity android:name=".MyVehicles.MyVehiclesActivity">
 
-             <intent-filter>
-             <action android:name="android.intent.action.MAIN" />
+<!--             <intent-filter>-->
+<!--             <action android:name="android.intent.action.MAIN" />-->
 
 
-             <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
+<!--             <category android:name="android.intent.category.LAUNCHER" />-->
+<!--             </intent-filter>-->
 
 
         </activity>
@@ -57,15 +57,20 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".SignPack.ForgetPasswordActivity">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
 
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".SignPack.RegisterActivity" />
-        <activity android:name=".SignPack.LoginActivity"></activity>
+        <activity android:name=".SignPack.LoginActivity">
+
+
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+
+
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+
+        </activity>
         <activity android:name=".Home" />
     </application>
 
