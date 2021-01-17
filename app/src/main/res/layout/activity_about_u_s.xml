@@ -55,14 +55,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/aboutus"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="-1dp"
         android:background="@drawable/aboutusback"
         android:gravity="center"
-        android:text="abo"
+        android:text="@string/aboutusPara"
         android:textColor="@color/white"
         android:textSize="28sp"
         android:textStyle="bold|italic" />
-
-
 
 
 </RelativeLayout>
