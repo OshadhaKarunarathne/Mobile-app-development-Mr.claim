@@ -228,6 +228,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
 
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -288,4 +289,8 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
+    public void goBack(View view) {
+        Intent intent = new Intent(ProfileActivity.this,Home.class);
+        startActivity(intent);
+    }
 }

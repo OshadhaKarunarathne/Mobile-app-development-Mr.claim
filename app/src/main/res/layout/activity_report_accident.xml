@@ -11,13 +11,13 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="120dp"
-        android:layout_height="125dp"
+        android:layout_width="105dp"
+        android:layout_height="93dp"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="23dp"
-        android:background="@color/white"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
         android:contentDescription="todo"
         app:srcCompat="@drawable/logo" />
 
@@ -41,14 +41,15 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/indigo_daisy"
             android:gravity="center_horizontal"
             android:text="Report Accident"
             android:textAlignment="center"
             android:textColor="#873032"
-            android:textSize="60sp"
+            android:textSize="50sp"
             android:textStyle="bold" />
 
         <TextView
@@ -184,7 +185,6 @@
 
         <Button
             android:id="@+id/SendData"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:layout_gravity="right"

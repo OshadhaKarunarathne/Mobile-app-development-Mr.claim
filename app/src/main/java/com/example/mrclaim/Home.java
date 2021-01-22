@@ -21,6 +21,7 @@ import android.widget.ViewFlipper;
 
 import com.example.mrclaim.MyAccidents.MyAccidentNavActivity;
 import com.example.mrclaim.MyVehicles.MyVehiclesActivity;
+import com.example.mrclaim.ShowCase.ShowCaseActivity;
 import com.example.mrclaim.SignPack.LoginActivity;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
@@ -226,6 +227,12 @@ public class Home extends AppCompatActivity {
                         Intent intent4 = new Intent(Home.this, ContactUs.class);
                         startActivity(intent4);
                         break;
+                    case R.id.acchistory:
+                        Intent intent6 = new Intent(Home.this, ShowCaseActivity.class);
+                        startActivity(intent6);
+                    case R.id.coverage:
+                        Intent intent8 = new Intent(Home.this,MyVehiclesActivity.class);
+                        startActivity(intent8);
 
                 }
                 return false;

@@ -188,5 +188,18 @@
         app:layout_constraintVertical_bias="0.233"
         app:srcCompat="@android:drawable/ic_menu_camera" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="44dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        android:onClick="goBack"
+        app:layout_constraintBottom_toTopOf="@+id/userImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrowback" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
